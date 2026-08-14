@@ -1,0 +1,35 @@
+<svg viewBox="0 0 640 153" width="640" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <!-- title: content center x = (77 + 563) / 2 = 320, y = 20 + 16*0.75 = 32 -->
+  <text x="320" y="32" font-size="16" fill="#1e293b" text-anchor="middle">Where a diagram comes from and where it lives</text>
+
+  <!-- connectors (painted below the boxes) -->
+  <path d="M222,88 L 234,88" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <path d="M400,88 L 412,88" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Box A: x=77, y=70, w=140, h=36, right edge=217, bottom edge=106 -->
+  <rect x="77" y="70" width="140" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="147" y="92" font-size="12" fill="#1e40af" text-anchor="middle">Markdown doc</text>
+
+  <!-- Box B: x=245, y=70, w=150, h=36, right edge=395 -->
+  <rect x="245" y="70" width="150" height="36" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="320" y="92" font-size="12" fill="#b45309" text-anchor="middle">svg-diagram skill</text>
+
+  <!-- Box C: x=423, y=70, w=140, h=36, right edge=563 -->
+  <rect x="423" y="70" width="140" height="36" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="493" y="92" font-size="12" fill="#166534" text-anchor="middle">assets/arch.svg</text>
+
+  <!-- caption, baseline = 106 + 19 = 125 -->
+  <text x="320" y="125" font-size="10" fill="#64748b" text-anchor="middle">spacing, baselines, arrowheads and escaping are all pre-decided</text>
+</svg>
