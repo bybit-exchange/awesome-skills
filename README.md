@@ -19,21 +19,25 @@ The `description` is the trigger. Write it as "what it covers + when to use it",
 
 | Skill | What it gives you |
 |-------|-------------------|
-| [`svg-diagram`](SKILL.md) | A house style for hand-written SVG diagrams: layout math, connector geometry, colors, CJK-safe fonts, and a verification checklist |
+| [`svg-diagram`](svg-diagram/SKILL.md) | A house style for hand-written SVG diagrams: layout math, connector geometry, colors, CJK-safe fonts, and a verification checklist |
 
 ## Install
 
 Claude Code discovers skills in `~/.claude/skills/<skill-name>/SKILL.md` (all projects) or `.claude/skills/<skill-name>/SKILL.md` (one project).
 
+Each skill here lives in its own directory, so installing one is a copy:
+
 ```bash
-git clone https://github.com/bybit-exchange/awesome-skills.git ~/.claude/skills/svg-diagram
+git clone https://github.com/bybit-exchange/awesome-skills.git
+mkdir -p ~/.claude/skills
+cp -R awesome-skills/svg-diagram ~/.claude/skills/
 ```
 
-Or, if you'd rather not clone into your config directory:
+Or grab a single file without cloning:
 
 ```bash
 mkdir -p ~/.claude/skills/svg-diagram
-curl -fsSL https://raw.githubusercontent.com/bybit-exchange/awesome-skills/main/SKILL.md \
+curl -fsSL https://raw.githubusercontent.com/bybit-exchange/awesome-skills/main/svg-diagram/SKILL.md \
   -o ~/.claude/skills/svg-diagram/SKILL.md
 ```
 
@@ -67,9 +71,7 @@ Two practical notes from the skill itself:
 
 ## Contributing
 
-Today the repo holds a single skill, with `SKILL.md` at the root so it can be cloned straight into a skills directory. Adding a second one means moving each into its own `<skill-name>/SKILL.md`, which is the layout to aim for.
-
-Keep the frontmatter to `name` and `description`. The description should say when to use the skill; that sentence is what the agent matches on.
+One directory per skill, one `SKILL.md` inside it, named the same as the skill. Keep the frontmatter to `name` and `description`. The description should say when to use the skill; that sentence is what the agent matches on.
 
 Before you open a PR, use the skill for a real task in a fresh session. If the agent didn't load it on its own, the description needs work; if the output still needed manual correction, the body is missing a rule.
 
