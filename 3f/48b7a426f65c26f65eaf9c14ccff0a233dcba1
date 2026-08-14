@@ -1,0 +1,25 @@
+svg-diagram/SKILL.md
+  4bdcd6365587c081 1-586
+README.md
+  4bdcd6365587c081 22,28-29,31-33,36,40,74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "3f48b7a426f65c26f65eaf9c14ccff0a233dcba1",
+  "prompts": {
+    "4bdcd6365587c081": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "88117225-b9c0-4c2c-8ea9-9d1049eb53e6",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 595,
+      "total_deletions": 7,
+      "accepted_lines": 595,
+      "overriden_lines": 0
+    }
+  }
+}
