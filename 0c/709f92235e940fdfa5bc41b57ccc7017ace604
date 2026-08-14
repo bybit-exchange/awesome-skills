@@ -1,0 +1,36 @@
+SKILL.md
+  941fdab0f8177595 1-586
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "0c709f92235e940fdfa5bc41b57ccc7017ace604",
+  "prompts": {
+    "4bdcd6365587c081": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "88117225-b9c0-4c2c-8ea9-9d1049eb53e6",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 139,
+      "total_deletions": 26,
+      "accepted_lines": 113,
+      "overriden_lines": 0
+    },
+    "941fdab0f8177595": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0191557c-55d6-4c7a-8b2c-02b6a99a6f92",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 586,
+      "total_deletions": 0,
+      "accepted_lines": 586,
+      "overriden_lines": 0
+    }
+  }
+}
