@@ -1,0 +1,25 @@
+assets/house-style.svg
+  4bdcd6365587c081 1-35
+README.md
+  4bdcd6365587c081 1-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "1bd80afcf6abdb88250e7ceaa070d303569b4207",
+  "prompts": {
+    "4bdcd6365587c081": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "88117225-b9c0-4c2c-8ea9-9d1049eb53e6",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 278,
+      "total_deletions": 52,
+      "accepted_lines": 113,
+      "overriden_lines": 0
+    }
+  }
+}
