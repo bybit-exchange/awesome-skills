@@ -1,0 +1,43 @@
+tools/svg-lint/lib/format-json.mjs
+  a87fe6c728d2decc 1-3
+tools/svg-lint/lib/format-text.mjs
+  a87fe6c728d2decc 1-40
+tools/svg-lint/test/report.test.mjs
+  a87fe6c728d2decc 1-159
+tools/svg-lint/lib/document.mjs
+  a87fe6c728d2decc 253-261,263,283
+tools/svg-lint/lib/report.mjs
+  a87fe6c728d2decc 1-21
+tools/svg-lint/test/cli.test.mjs
+  a87fe6c728d2decc 36-56
+tools/svg-lint/lib/lint.mjs
+  a87fe6c728d2decc 1-50
+tools/svg-lint/test/fixtures/pass/minimal.svg
+  a87fe6c728d2decc 1-18
+tools/svg-lint/lib/registry.mjs
+  a87fe6c728d2decc 1-3
+tools/svg-lint/bin/svg-lint.mjs
+  a87fe6c728d2decc 5-8,59-62
+tools/svg-lint/test/helpers/load.mjs
+  a87fe6c728d2decc 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "2224adc206ab6b539c569dca5263786b84e671b5",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 355,
+      "total_deletions": 5,
+      "accepted_lines": 355,
+      "overriden_lines": 0
+    }
+  }
+}
