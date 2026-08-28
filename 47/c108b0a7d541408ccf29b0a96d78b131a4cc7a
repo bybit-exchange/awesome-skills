@@ -1,0 +1,25 @@
+tools/svg-lint/lib/parse-svg.mjs
+  a87fe6c728d2decc 49-73,86,171-173
+tools/svg-lint/test/parse-svg.test.mjs
+  a87fe6c728d2decc 121-161
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "47c108b0a7d541408ccf29b0a96d78b131a4cc7a",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 75,
+      "total_deletions": 2,
+      "accepted_lines": 661,
+      "overriden_lines": 0
+    }
+  }
+}
