@@ -1,0 +1,25 @@
+tools/svg-lint/test/geometry.test.mjs
+  a87fe6c728d2decc 276-290
+.superpowers/sdd/progress.md
+  a87fe6c728d2decc 38,42-54,148-155
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "83b29cba21c6a5e2b26d17609d5a5b8e4e062402",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 15,
+      "total_deletions": 0,
+      "accepted_lines": 635,
+      "overriden_lines": 0
+    }
+  }
+}
