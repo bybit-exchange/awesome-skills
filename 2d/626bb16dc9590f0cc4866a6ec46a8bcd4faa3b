@@ -1,0 +1,31 @@
+tools/svg-lint/lib/checks/font-stack.mjs
+  a87fe6c728d2decc 10-19,21-22,72-75,77-80
+tools/svg-lint/lib/document.mjs
+  a87fe6c728d2decc 256-259
+docs/superpowers/plans/2026-08-28-svg-lint.md
+  a87fe6c728d2decc 3939-3947,3950,3953-3963,4016-4017,4046-4048,4062-4069,4086-4153,4184-4193,4195-4196,4246-4249,4251-4254,4267
+tools/svg-lint/test/checks/font-stack.test.mjs
+  a87fe6c728d2decc 20-21,50-52,66-73,90-157
+tools/svg-lint/test/document.test.mjs
+  a87fe6c728d2decc 374-384
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "2d626bb16dc9590f0cc4866a6ec46a8bcd4faa3b",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 239,
+      "total_deletions": 17,
+      "accepted_lines": 239,
+      "overriden_lines": 0
+    }
+  }
+}
