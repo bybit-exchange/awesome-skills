@@ -1,0 +1,29 @@
+tools/svg-lint/test/fixtures/fail/baseline-off.svg
+  a87fe6c728d2decc 1-7
+tools/svg-lint/lib/registry.mjs
+  a87fe6c728d2decc 7,14
+tools/svg-lint/test/checks/baseline-offset.test.mjs
+  a87fe6c728d2decc 1-149
+tools/svg-lint/lib/checks/baseline-offset.mjs
+  a87fe6c728d2decc 1-63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "f2a419b2a11eda902fcbf87eac9ad2c61c57d90e",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 221,
+      "total_deletions": 0,
+      "accepted_lines": 221,
+      "overriden_lines": 0
+    }
+  }
+}
