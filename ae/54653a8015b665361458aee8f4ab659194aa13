@@ -1,0 +1,27 @@
+tools/svg-lint/test/document.test.mjs
+  a87fe6c728d2decc 374,1271-1341
+tools/svg-lint/test/checks/font-stack.test.mjs
+  a87fe6c728d2decc 149,159,170
+tools/svg-lint/lib/document.mjs
+  a87fe6c728d2decc 18-24,50-51,120-131,138-142,214-215,252-253
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "ae54653a8015b665361458aee8f4ab659194aa13",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 2634,
+      "total_deletions": 2538,
+      "accepted_lines": 107,
+      "overriden_lines": 0
+    }
+  }
+}
