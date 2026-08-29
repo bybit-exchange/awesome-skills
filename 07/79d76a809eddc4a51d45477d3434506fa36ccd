@@ -1,0 +1,25 @@
+tools/svg-lint/lib/checks/box-height.mjs
+  a87fe6c728d2decc 74-77
+tools/svg-lint/test/checks/box-height.test.mjs
+  a87fe6c728d2decc 131,220-243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "0779d76a809eddc4a51d45477d3434506fa36ccd",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 41,
+      "total_deletions": 366,
+      "accepted_lines": 29,
+      "overriden_lines": 0
+    }
+  }
+}
