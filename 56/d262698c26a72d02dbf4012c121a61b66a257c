@@ -1,0 +1,29 @@
+tools/svg-lint/lib/registry.mjs
+  a87fe6c728d2decc 9,18
+tools/svg-lint/test/fixtures/fail/marker-units-missing.svg
+  a87fe6c728d2decc 1-14
+tools/svg-lint/lib/checks/arrow-marker.mjs
+  a87fe6c728d2decc 1-170
+tools/svg-lint/test/checks/arrow-marker.test.mjs
+  a87fe6c728d2decc 1-183
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "56d262698c26a72d02dbf4012c121a61b66a257c",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 369,
+      "total_deletions": 0,
+      "accepted_lines": 369,
+      "overriden_lines": 0
+    }
+  }
+}
