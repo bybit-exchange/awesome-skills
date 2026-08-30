@@ -1,0 +1,25 @@
+tools/svg-lint/lib/checks/arrow-marker.mjs
+  a87fe6c728d2decc 23-24,27-31,48-56,67-74,83,93,99-104,107-108,149-156,165-173,179-187,189,205
+tools/svg-lint/test/checks/arrow-marker.test.mjs
+  a87fe6c728d2decc 4,67-69,196-299,359-372,384-394
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "e2cdd65c5b310fbefe24d34f307facc7135034fc",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 212,
+      "total_deletions": 655,
+      "accepted_lines": 195,
+      "overriden_lines": 0
+    }
+  }
+}
