@@ -1,0 +1,29 @@
+tools/svg-lint/lib/registry.mjs
+  a87fe6c728d2decc 10,20
+tools/svg-lint/test/checks/text-overflow.test.mjs
+  a87fe6c728d2decc 1-252
+tools/svg-lint/test/fixtures/fail/text-overflow.svg
+  a87fe6c728d2decc 1-6
+tools/svg-lint/lib/checks/text-overflow.mjs
+  a87fe6c728d2decc 1-75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "41b965a795267379cb31bea846ee3e65d3afd220",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 335,
+      "total_deletions": 354,
+      "accepted_lines": 335,
+      "overriden_lines": 0
+    }
+  }
+}
