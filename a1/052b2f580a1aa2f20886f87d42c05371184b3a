@@ -1,0 +1,23 @@
+.superpowers/sdd/progress.md
+  a87fe6c728d2decc 2007-2034
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "a1052b2f580a1aa2f20886f87d42c05371184b3a",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 28,
+      "total_deletions": 0,
+      "accepted_lines": 28,
+      "overriden_lines": 0
+    }
+  }
+}
