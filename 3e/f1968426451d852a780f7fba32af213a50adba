@@ -1,0 +1,25 @@
+tools/svg-lint/test/checks/baseline-offset.test.mjs
+  a87fe6c728d2decc 233-235,243-244,277-296,306-315
+tools/svg-lint/lib/checks/baseline-offset.mjs
+  a87fe6c728d2decc 18,20,23-32,39-40,80-82,90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "3ef1968426451d852a780f7fba32af213a50adba",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 53,
+      "total_deletions": 463,
+      "accepted_lines": 53,
+      "overriden_lines": 0
+    }
+  }
+}
