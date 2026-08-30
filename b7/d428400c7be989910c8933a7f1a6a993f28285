@@ -1,0 +1,33 @@
+tools/svg-lint/lib/document.mjs
+  a87fe6c728d2decc 616-622
+tools/svg-lint/test/fixtures/fail/tight-spacing.svg
+  a87fe6c728d2decc 1-9
+tools/svg-lint/test/document.test.mjs
+  a87fe6c728d2decc 1525-1560
+tools/svg-lint/test/checks/block-spacing.test.mjs
+  a87fe6c728d2decc 1-228
+tools/svg-lint/lib/checks/block-spacing.mjs
+  a87fe6c728d2decc 1-146
+tools/svg-lint/lib/registry.mjs
+  a87fe6c728d2decc 8,16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "b7d428400c7be989910c8933a7f1a6a993f28285",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 428,
+      "total_deletions": 1,
+      "accepted_lines": 428,
+      "overriden_lines": 0
+    }
+  }
+}
