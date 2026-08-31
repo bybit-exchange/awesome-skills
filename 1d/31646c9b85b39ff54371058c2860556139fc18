@@ -1,0 +1,25 @@
+tools/svg-lint/test/checks/overlap.test.mjs
+  a87fe6c728d2decc 508-515,533-537,540-542,546-549
+tools/svg-lint/lib/checks/overlap.mjs
+  a87fe6c728d2decc 57-61,75-80,155-164
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "1d31646c9b85b39ff54371058c2860556139fc18",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 1059,
+      "total_deletions": 1056,
+      "accepted_lines": 41,
+      "overriden_lines": 0
+    }
+  }
+}
