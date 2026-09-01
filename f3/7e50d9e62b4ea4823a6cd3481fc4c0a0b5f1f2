@@ -1,0 +1,23 @@
+svg-diagram/gallery/07-workflow-install-surfaces.svg
+  a87fe6c728d2decc 1-76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "f37e50d9e62b4ea4823a6cd3481fc4c0a0b5f1f2",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 29,
+      "total_deletions": 2,
+      "accepted_lines": 395,
+      "overriden_lines": 0
+    }
+  }
+}
