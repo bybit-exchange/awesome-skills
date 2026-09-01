@@ -1,0 +1,23 @@
+svg-diagram/gallery/01-architecture-skill-loading.svg
+  a87fe6c728d2decc 1,17-20,22-24,26-35,37-51,53-61,63-71,73-79,81-87,89-95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "49f7ec89eaa006a7a1877a82d50de390fecee1f9",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 91,
+      "total_deletions": 0,
+      "accepted_lines": 602,
+      "overriden_lines": 0
+    }
+  }
+}
