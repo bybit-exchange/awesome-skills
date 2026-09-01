@@ -1,0 +1,25 @@
+tools/svg-lint/lib/checks/light-bg-fallback.mjs
+  a87fe6c728d2decc 2
+tools/svg-lint/lib/checks/arrow-marker.mjs
+  a87fe6c728d2decc 48,71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "d5c83e0b2ee0fdec861a2467b2a93d88d749ebb5",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 3,
+      "overriden_lines": 0
+    }
+  }
+}
