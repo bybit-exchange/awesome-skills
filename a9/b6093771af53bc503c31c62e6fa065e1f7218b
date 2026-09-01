@@ -1,0 +1,35 @@
+tools/svg-lint/test/checks/palette-conformance.test.mjs
+  a87fe6c728d2decc 32-41,55-78,202-206,369-378,475-485
+tools/svg-lint/lib/checks/block-spacing.mjs
+  a87fe6c728d2decc 184
+tools/svg-lint/lib/document.mjs
+  a87fe6c728d2decc 567-577,731-734,762-765,776-779
+tools/svg-lint/test/checks/block-spacing.test.mjs
+  a87fe6c728d2decc 290-291
+tools/svg-lint/lib/checks/palette-conformance.mjs
+  a87fe6c728d2decc 18-20,44-50,54
+tools/svg-lint/test/document.test.mjs
+  a87fe6c728d2decc 2360-2368
+tools/svg-lint/test/fixtures/fail/off-palette.svg
+  a87fe6c728d2decc 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "a9b6093771af53bc503c31c62e6fa065e1f7218b",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 138,
+      "total_deletions": 54,
+      "accepted_lines": 114,
+      "overriden_lines": 0
+    }
+  }
+}
