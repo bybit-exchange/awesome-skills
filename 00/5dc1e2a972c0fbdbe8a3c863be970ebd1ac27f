@@ -1,0 +1,27 @@
+tools/svg-lint/lib/checks/block-spacing.mjs
+  a87fe6c728d2decc 7,124-142,174-176,179
+tools/svg-lint/test/checks/block-spacing.test.mjs
+  a87fe6c728d2decc 324-385
+tools/svg-lint/lib/panels.mjs
+  a87fe6c728d2decc 42-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "005dc1e2a972c0fbdbe8a3c863be970ebd1ac27f",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 154,
+      "total_deletions": 780,
+      "accepted_lines": 308,
+      "overriden_lines": 0
+    }
+  }
+}
