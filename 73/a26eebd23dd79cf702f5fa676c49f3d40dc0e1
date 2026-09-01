@@ -1,0 +1,25 @@
+tools/svg-lint/test/fixtures/fail/right-angle-curve.svg
+  a87fe6c728d2decc 3-6,17
+tools/svg-lint/test/checks/connector-geometry.test.mjs
+  a87fe6c728d2decc 26-27,44-45,161-163,172,177,250
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "73a26eebd23dd79cf702f5fa676c49f3d40dc0e1",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 15,
+      "total_deletions": 8,
+      "accepted_lines": 15,
+      "overriden_lines": 0
+    }
+  }
+}
