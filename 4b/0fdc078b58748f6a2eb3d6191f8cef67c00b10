@@ -1,0 +1,23 @@
+docs/superpowers/plans/2026-08-28-svg-lint.md
+  a87fe6c728d2decc 7679-7689,7748,7756-7757,7764-7765,7770,7808,7811,7849,8093-8101,8137-8140,8168-8171,8182-8185,8211,8296-8298,8536-8545,8559-8582,8706-8710,8873-8882,8979-8989,9027-9029,9053-9059,9063,9195
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "4b0fdc078b58748f6a2eb3d6191f8cef67c00b10",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 120,
+      "total_deletions": 27,
+      "accepted_lines": 122,
+      "overriden_lines": 0
+    }
+  }
+}
