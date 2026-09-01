@@ -1,0 +1,23 @@
+tools/svg-lint/README.md
+  a87fe6c728d2decc 29-36,58-104,115,118-122,124,131-167,184-187,200-217,229-260,262-263
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "264dccc808145a3cafda073b5523f3c8d60d6c74",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 204,
+      "total_deletions": 70,
+      "accepted_lines": 186,
+      "overriden_lines": 0
+    }
+  }
+}
