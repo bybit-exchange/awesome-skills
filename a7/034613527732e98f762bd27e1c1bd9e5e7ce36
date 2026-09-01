@@ -1,0 +1,25 @@
+tools/svg-lint/test/checks/light-bg-fallback.test.mjs
+  a87fe6c728d2decc 204-235
+tools/svg-lint/lib/checks/light-bg-fallback.mjs
+  a87fe6c728d2decc 75-84,101
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "a7034613527732e98f762bd27e1c1bd9e5e7ce36",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 43,
+      "total_deletions": 363,
+      "accepted_lines": 314,
+      "overriden_lines": 0
+    }
+  }
+}
