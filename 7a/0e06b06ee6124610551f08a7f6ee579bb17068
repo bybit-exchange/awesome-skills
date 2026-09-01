@@ -1,0 +1,23 @@
+README.md
+  a87fe6c728d2decc 3-4,6-7,9,11,13-14,17,19,21-28,30,32,40,48,50,52-59,61-67,69,71-78,80,82-88,90-110,114-124,126
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "7a0e06b06ee6124610551f08a7f6ee579bb17068",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 244,
+      "total_deletions": 40,
+      "accepted_lines": 854,
+      "overriden_lines": 0
+    }
+  }
+}
