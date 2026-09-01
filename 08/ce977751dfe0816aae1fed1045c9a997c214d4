@@ -1,0 +1,27 @@
+tools/svg-lint/README.md
+  a87fe6c728d2decc 66,78-83
+tools/svg-lint/lib/checks/overlap.mjs
+  a87fe6c728d2decc 189-256,297-315
+tools/svg-lint/test/checks/overlap.test.mjs
+  a87fe6c728d2decc 155-263
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "08ce977751dfe0816aae1fed1045c9a997c214d4",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 25,
+      "total_deletions": 5,
+      "accepted_lines": 878,
+      "overriden_lines": 0
+    }
+  }
+}
