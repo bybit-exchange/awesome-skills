@@ -1,0 +1,25 @@
+tools/svg-lint/lib/checks/connector-geometry.mjs
+  a87fe6c728d2decc 83-95
+tools/svg-lint/test/checks/connector-geometry.test.mjs
+  a87fe6c728d2decc 172-205
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "6798106b86f79d2f2f94aeb54fed5d19c6e0605f",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 128,
+      "total_deletions": 594,
+      "accepted_lines": 283,
+      "overriden_lines": 0
+    }
+  }
+}
