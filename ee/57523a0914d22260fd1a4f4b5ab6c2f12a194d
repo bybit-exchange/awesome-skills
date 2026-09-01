@@ -1,0 +1,31 @@
+tools/svg-lint/test/fixtures/fail/warning-only.svg
+  a87fe6c728d2decc 1-15
+tools/svg-lint/test/integration.test.mjs
+  a87fe6c728d2decc 1-110
+tools/svg-lint/bin/svg-lint.mjs
+  a87fe6c728d2decc 51,56-57,59,62,66-68,71-74
+package.json
+  a87fe6c728d2decc 1-10
+tools/svg-lint/README.md
+  a87fe6c728d2decc 1-75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "ee57523a0914d22260fd1a4f4b5ab6c2f12a194d",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 228,
+      "total_deletions": 9,
+      "accepted_lines": 222,
+      "overriden_lines": 0
+    }
+  }
+}
