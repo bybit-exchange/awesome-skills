@@ -1,0 +1,29 @@
+tools/svg-lint/lib/checks/arrow-marker.mjs
+  a87fe6c728d2decc 193
+tools/svg-lint/bin/svg-lint.mjs
+  a87fe6c728d2decc 24-26
+tools/svg-lint/lib/checks/overlap.mjs
+  a87fe6c728d2decc 67-71
+tools/svg-lint/lib/report.mjs
+  a87fe6c728d2decc 4-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "b76cc43bcf1fc01c164d903e3fbb6f13126c1b5e",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 13,
+      "total_deletions": 8,
+      "accepted_lines": 12,
+      "overriden_lines": 0
+    }
+  }
+}
