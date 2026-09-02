@@ -14,10 +14,9 @@
   <!-- Light canvas, so the figure reads as a white card on a page of any colour. -->
   <rect x="18" y="0" width="1118" height="487.5" fill="#ffffff"/>
 
-  <!-- Box widths, counted per script: latin 7.0px per character at 12px, 5.5px at 10px;
-       a CJK character (fullwidth brackets included) is one full font size wide.
-         command      47 latin x 7.0  = 329.0 -> 360 box, 15.5px clear each side
-         longest note  4 CJK x 10 + 35 latin x 5.5 = 232.5 -> 305 box, 36px clear each side
+  <!-- Box widths, all-Latin labels: 7.0px per character at 12px, 5.5px at 10px.
+         command      47 latin x 7.0 = 329.0 -> 360 box, 15.5px clear each side
+         longest note 45 latin x 5.5 = 247.5 -> 305 box, 28.75px clear each side
        The three boxes on the middle line (command, CLI, .pi) have to stay within 60px of
        each other in size, so the CLI box and the surfaces follow the command box up to 305
        rather than hugging their own labels: 360 - 305 = 55. All five surfaces share that
@@ -25,7 +24,7 @@
 
   <!-- Title x is the centre of the drawn content (40..1114), not of the viewBox.
        y = 22px top margin + 16 x 0.75 ascent. -->
-  <text x="577" y="34" font-size="16" fill="#1e293b" text-anchor="middle">一行命令，装到所有 agent</text>
+  <text x="577" y="34" font-size="16" fill="#1e293b" text-anchor="middle">One command, every agent</text>
 
   <!-- Connectors: start = source edge + 5, end = target edge - 11, because refX="2" puts the
        arrow tip 6px past the end of the line. -->
@@ -59,10 +58,10 @@
        to climb without passing within 20px of the surface they are not connected to. -->
   <rect x="809" y="62" width="305" height="54" rx="6" fill="#d1fae5" stroke="#22c55e"/>
   <text x="961.5" y="83.85" font-size="12" fill="#166534" text-anchor="middle">.agents/skills/</text>
-  <text x="961.5" y="101.85" font-size="10" fill="#64748b" text-anchor="middle">通用（Codex / Cursor / Copilot / opencode）</text>
+  <text x="961.5" y="101.85" font-size="10" fill="#64748b" text-anchor="middle">Generic (Codex / Cursor / Copilot / opencode)</text>
   <rect x="785" y="144" width="305" height="54" rx="6" fill="#d1fae5" stroke="#22c55e"/>
   <text x="937.5" y="165.85" font-size="12" fill="#166534" text-anchor="middle">.claude/skills/</text>
-  <text x="937.5" y="183.85" font-size="10" fill="#64748b" text-anchor="middle">符号链接</text>
+  <text x="937.5" y="183.85" font-size="10" fill="#64748b" text-anchor="middle">Symlink</text>
   <rect x="761" y="226" width="305" height="54" rx="6" fill="#d1fae5" stroke="#22c55e"/>
   <text x="913.5" y="257.2" font-size="12" fill="#166534" text-anchor="middle">.pi/skills/</text>
   <rect x="785" y="308" width="305" height="54" rx="6" fill="#d1fae5" stroke="#22c55e"/>
@@ -71,6 +70,7 @@
   <text x="961.5" y="421.2" font-size="12" fill="#166534" text-anchor="middle">.windsurf/skills/</text>
 
   <!-- Caption on the content centre, 19px below the lowest box, which keeps its glyph box far
-       clear of the lowest arc. -->
-  <text x="577" y="463" font-size="10" fill="#64748b" text-anchor="middle">实测 2026-08-28：CLI 识别 77 个 agent，Claude Code 走符号链接</text>
+       clear of the lowest arc. 77 latin x 5.5 = 423.5, so it spans 577 +/- 211.75 = 365..789,
+       stopping 20px short of the surfaces' left edge at 809. -->
+  <text x="577" y="463" font-size="10" fill="#64748b" text-anchor="middle">Measured 2026-08-28: the CLI recognises 77 agents; Claude Code gets a symlink</text>
 </svg>
