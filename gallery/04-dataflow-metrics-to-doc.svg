@@ -50,7 +50,7 @@
   <path d="M454,99 L 454,111" fill="none" stroke="#ec4899" stroke-width="1.5" marker-end="url(#arrow-pink)"/>
 
   <!-- Layer 3: the annotation that motivates step 4. 10px text -> height 10 x 3 = 30.
-       Label width: 8 CJK x10 = 80, plus 一 arrow glyph 10, plus 8 Latin/space x5.5 = 44 -> 134.
+       Label width: 8 CJK x10 = 80, plus 1 arrow glyph 10, plus 8 Latin/space x5.5 = 44 -> 134.
        134 + 2x10 padding = 154 minimum; 170 gives visible clearance on both sides.
        The literal ampersand is written &amp; in the source - a bare & would make this
        whole file fail to parse, which is exactly what the label is warning about.
