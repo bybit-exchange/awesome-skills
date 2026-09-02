@@ -1,0 +1,177 @@
+tools/svg-lint/test/checks/viewbox-clipping.test.mjs
+  a87fe6c728d2decc 1-154
+tools/svg-lint/lib/checks/palette-conformance.mjs
+  a87fe6c728d2decc 1-182
+tools/svg-lint/lib/checks/font-stack.mjs
+  a87fe6c728d2decc 1-136
+tools/svg-lint/test/checks/font-stack.test.mjs
+  a87fe6c728d2decc 1-576
+tools/svg-lint/test/checks/light-bg-fallback.test.mjs
+  a87fe6c728d2decc 1-239
+tools/svg-lint/lib/checks/baseline-offset.mjs
+  a87fe6c728d2decc 1-124
+tools/svg-lint/test/parse-svg.test.mjs
+  a87fe6c728d2decc 1-450
+assets/house-style.svg
+  a87fe6c728d2decc 1,13
+tools/svg-lint/lib/checks/overlap.mjs
+  a87fe6c728d2decc 1-497
+.gitignore
+  a87fe6c728d2decc 1-6
+gallery/10-workflow-ab-benchmark.svg
+  a87fe6c728d2decc 1-105
+tools/svg-lint/lib/checks/text-overflow.mjs
+  a87fe6c728d2decc 1-135
+tools/svg-lint/lib/document.mjs
+  a87fe6c728d2decc 1-901
+gallery/05-lifecycle-skill-states.svg
+  a87fe6c728d2decc 1-70
+gallery/03-sequence-lint-gate.svg
+  a87fe6c728d2decc 1-83
+tools/svg-lint/lib/text-metrics.mjs
+  a87fe6c728d2decc 1-129
+tools/svg-lint/test/checks/baseline-offset.test.mjs
+  a87fe6c728d2decc 1-385
+tools/svg-lint/test/checks/connector-geometry.test.mjs
+  a87fe6c728d2decc 1-402
+tools/svg-lint/test/fixtures/fail/baseline-off.svg
+  a87fe6c728d2decc 1-7
+tools/svg-lint/test/fixtures/fail/line-cuts-box.svg
+  a87fe6c728d2decc 1-11
+tools/svg-lint/test/fixtures/fail/no-background.svg
+  a87fe6c728d2decc 1-6
+tools/svg-lint/test/fixtures/fail/tight-spacing.svg
+  a87fe6c728d2decc 1-9
+tools/svg-lint/lib/checks/xml-escaping.mjs
+  a87fe6c728d2decc 1-42
+tools/svg-lint/test/document.test.mjs
+  a87fe6c728d2decc 1-2412
+tools/svg-lint/test/fixtures/fail/text-overflow.svg
+  a87fe6c728d2decc 1-6
+tools/svg-lint/test/fixtures/fail/unescaped-ampersand.svg
+  a87fe6c728d2decc 1-6
+tools/svg-lint/test/integration.test.mjs
+  a87fe6c728d2decc 1-150
+tools/svg-lint/bin/svg-lint.mjs
+  a87fe6c728d2decc 1-77
+tools/svg-lint/test/checks/box-height.test.mjs
+  a87fe6c728d2decc 1-329
+tools/svg-lint/lib/report.mjs
+  a87fe6c728d2decc 1-25
+tools/svg-lint/test/fixtures/fail/warning-only.svg
+  a87fe6c728d2decc 1-15
+tools/svg-lint/lib/color.mjs
+  a87fe6c728d2decc 1-56
+gallery/02-workflow-svg-authoring.svg
+  a87fe6c728d2decc 1-70
+SKILL.md
+  a87fe6c728d2decc 10,14,508
+gallery/07-workflow-install-surfaces.svg
+  a87fe6c728d2decc 1-76
+tools/svg-lint/lib/format-json.mjs
+  a87fe6c728d2decc 1-7
+tools/svg-lint/lib/palette.mjs
+  a87fe6c728d2decc 1-45
+gallery/09-dataflow-tiered-routing.svg
+  a87fe6c728d2decc 1-124
+tools/svg-lint/test/checks/xml-escaping.test.mjs
+  a87fe6c728d2decc 1-139
+tools/svg-lint/lib/checks/light-bg-fallback.mjs
+  a87fe6c728d2decc 2-117
+tools/svg-lint/lib/parse-svg.mjs
+  a87fe6c728d2decc 1-288
+tools/svg-lint/test/checks/palette-conformance.test.mjs
+  a87fe6c728d2decc 1-498
+tools/svg-lint/lib/registry.mjs
+  a87fe6c728d2decc 1-32
+gallery/04-dataflow-metrics-to-doc.svg
+  a87fe6c728d2decc 1-79
+tools/svg-lint/test/fixtures/fail/marker-units-missing.svg
+  a87fe6c728d2decc 1-14
+tools/svg-lint/README.md
+  a87fe6c728d2decc 1-318
+tools/svg-lint/lib/checks/arrow-marker.mjs
+  a87fe6c728d2decc 1-380
+tools/svg-lint/test/checks/arrow-marker.test.mjs
+  a87fe6c728d2decc 1-909
+tools/svg-lint/test/fixtures/fail/text-over-line.svg
+  a87fe6c728d2decc 1-10
+tools/svg-lint/lib/checks/box-height.mjs
+  a87fe6c728d2decc 1-95
+tools/svg-lint/lib/checks/connector-geometry.mjs
+  a87fe6c728d2decc 1-212
+gallery/06-architecture-repo-layout.svg
+  a87fe6c728d2decc 1-74
+tools/svg-lint/lib/checks/viewbox-clipping.mjs
+  a87fe6c728d2decc 1-94
+tools/svg-lint/lib/geometry.mjs
+  a87fe6c728d2decc 1-282
+tools/svg-lint/test/fixtures/fail/missing-noto.svg
+  a87fe6c728d2decc 1-6
+README.md
+  a87fe6c728d2decc 1-3,6-7,9,11,13-14,17-23,25,27,29-36,38,40,43-45,48,52,56,58,60-76,78,80-124,127-148,150-156,158,160-305,309-319,321
+tools/svg-lint/lib/lint.mjs
+  a87fe6c728d2decc 1-58
+tools/svg-lint/test/fixtures/fail/off-palette.svg
+  a87fe6c728d2decc 1-9
+tools/svg-lint/test/color.test.mjs
+  a87fe6c728d2decc 1-187
+tools/svg-lint/test/fixtures/fail/short-box.svg
+  a87fe6c728d2decc 1-7
+gallery/01-architecture-skill-loading.svg
+  a87fe6c728d2decc 1-96
+tools/svg-lint/lib/panels.mjs
+  a87fe6c728d2decc 1-65
+tools/svg-lint/test/fixtures/fail/clipped-bottom.svg
+  a87fe6c728d2decc 1-7
+tools/svg-lint/test/text-metrics.test.mjs
+  a87fe6c728d2decc 1-196
+package.json
+  a87fe6c728d2decc 1-10
+tools/svg-lint/lib/checks/block-spacing.mjs
+  a87fe6c728d2decc 1-270
+tools/svg-lint/test/checks/block-spacing.test.mjs
+  a87fe6c728d2decc 1-553
+tools/svg-lint/test/checks/overlap.test.mjs
+  a87fe6c728d2decc 1-1310
+tools/svg-lint/test/cli.test.mjs
+  a87fe6c728d2decc 1-80
+tools/svg-lint/test/geometry.test.mjs
+  a87fe6c728d2decc 1-387
+tools/svg-lint/test/helpers/load.mjs
+  a87fe6c728d2decc 1-21
+tools/svg-lint/test/checks/text-overflow.test.mjs
+  a87fe6c728d2decc 1-599
+tools/svg-lint/lib/format-text.mjs
+  a87fe6c728d2decc 1-42
+gallery/08-reference-cjk-fonts.svg
+  a87fe6c728d2decc 1-80
+tools/svg-lint/test/fixtures/pass/minimal.svg
+  a87fe6c728d2decc 1-18
+tools/svg-lint/test/report.test.mjs
+  a87fe6c728d2decc 1-260
+tools/svg-lint/test/fixtures/pass/card-row.svg
+  a87fe6c728d2decc 1-17
+tools/svg-lint/test/fixtures/fail/right-angle-curve.svg
+  a87fe6c728d2decc 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "27b3fb83620888684cde698de9b87e23e426d7e2",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 14334,
+      "total_deletions": 4,
+      "accepted_lines": 17369,
+      "overriden_lines": 0
+    }
+  }
+}
