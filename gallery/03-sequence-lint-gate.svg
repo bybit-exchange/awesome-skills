@@ -46,17 +46,19 @@
   <path d="M145,176 L 357,176" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
   <!-- 3. svg-lint -> Filesystem: the gate reads the real file, not an intermediate IR -->
   <path d="M373,222 L 585,222" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-muted)"/>
-  <!-- 4. svg-lint self-call. Both endpoints sit on the lifeline 50px apart, so the axis is vertical;
-       cp1 bulges right, cp2.x = end.x makes the arrow land pointing down. -->
-  <path d="M368,250 C 408,255 368,290 368,300" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <!-- 4. svg-lint self-call. It leaves the lifeline 5px clear at 373, bulges right to 408, and returns to
+       379 = lifeline + 11, so the head points back at the lifeline the way a self-message must.
+       cp2.y = end.y keeps that closing tangent level, so the arrowhead is horizontal, not tilted. -->
+  <path d="M373,250 C 408,252 408,290 379,290" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
   <!-- 5. svg-lint -> Agent -->
   <path d="M363,330 L 151,330" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
   <!-- 6. Agent -> Filesystem (inside alt) -->
   <path d="M145,396 L 585,396" fill="none" stroke="#ec4899" stroke-width="1.5" marker-end="url(#arrow-pink)"/>
   <!-- 7. Agent -> svg-lint (inside alt) -->
   <path d="M145,442 L 357,442" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
-  <!-- 8. Agent self-call, starting 5px below the alt frame it follows -->
-  <path d="M140,463 C 180,468 140,503 140,513" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <!-- 8. Agent self-call, starting 5px below the alt frame it follows. Same return shape as 4:
+       out at 145, bulge to 180, back to 151 = lifeline + 11, closing tangent level. -->
+  <path d="M145,463 C 180,465 180,503 151,503" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
 
   <!-- Layer 3: participant head boxes; 200x36, baseline = 58 + 18 + 12 × 0.35 -->
   <rect x="40" y="58" width="200" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
