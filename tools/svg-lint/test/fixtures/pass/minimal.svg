@@ -1,0 +1,18 @@
+<!-- tools/svg-lint/test/fixtures/pass/minimal.svg -->
+<svg viewBox="0 0 272 120" width="272" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="272" height="120" fill="#ffffff"/>
+  <text x="136" y="32" font-size="16" fill="#1e293b" text-anchor="middle">Two step flow</text>
+  <path d="M117,80 L 129,80" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <rect x="22" y="62" width="90" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="67" y="84" font-size="12" fill="#1e40af" text-anchor="middle">Ingest</text>
+  <rect x="140" y="62" width="110" height="36" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="195" y="84" font-size="12" fill="#166534" text-anchor="middle">Store</text>
+</svg>

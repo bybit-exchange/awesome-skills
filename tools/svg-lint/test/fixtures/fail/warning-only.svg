@@ -1,0 +1,15 @@
+<!-- tools/svg-lint/test/fixtures/fail/warning-only.svg -->
+<!-- Triggers exactly one warning: #ff6b6b is not in the palette (off-palette-color), while the geometry / margins / fonts / background are all compliant.
+     Used to verify the contract "with only warnings the exit code is 0 but the output carries a prominent notice".
+     The geometry comes from the same source as pass/minimal.svg: top margin 32-16x0.75=20, bottom margin 120-98=22,
+     22 on each side, the title centred on the content centre 136, and the label baseline 62+18+4.2~=84.
+     The #ffffff background rectangle covers the full width, so the light background fallback check passes outright. -->
+<svg viewBox="0 0 272 120" width="272" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <rect x="0" y="0" width="272" height="120" fill="#ffffff"/>
+  <text x="136" y="32" font-size="16" fill="#1e293b" text-anchor="middle">Palette drift</text>
+  <rect x="22" y="62" width="228" height="36" rx="6" fill="#ff6b6b" stroke="#3b82f6"/>
+  <text x="136" y="84" font-size="12" fill="#1e293b" text-anchor="middle">Ingest</text>
+</svg>

@@ -1,0 +1,7 @@
+<!-- tools/svg-lint/test/fixtures/fail/baseline-off.svg -->
+<!-- the baseline should be 62 + 18 + 4.2 = 84.2; this is the box centre, 80, so the text rides high -->
+<svg viewBox="0 0 272 120" width="272" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }</style>
+  <rect x="22" y="62" width="228" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="136" y="80" font-size="12" fill="#1e40af" text-anchor="middle">Ingest</text>
+</svg>

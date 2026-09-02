@@ -7,11 +7,11 @@ description: SVG diagramming conventions blending a technical look with CJK-frie
 
 ## Output location and referencing
 
-> The routing rule "use SVG for diagrams, never ASCII art" lives in your global `CLAUDE.md` ("document output defaults"), which is always loaded and takes effect before this skill — it is not repeated here. This section only covers where the file lands once you have decided to produce a diagram.
+> Diagrams go in SVG, never ASCII art. That rule decides *whether* to draw; this skill covers *how*, starting with where the file lands.
 
 - Put the file in an `assets/` directory next to the document (e.g. `docs/foo.md` → `docs/assets/foo-arch.svg`)
 - Reference it from markdown with a relative path, `![title](assets/xxx.svg)`. Do not inline SVG XML.
-- When data in the document changes, the corresponding SVG must be updated too (see the "delivery gate" section of the global `CLAUDE.md`)
+- When data in the document changes, the corresponding SVG must be updated too. A figure that contradicts the prose beside it is worse than no figure
 
 ## Core principles
 
@@ -505,7 +505,7 @@ When generating SVG from Python/JS, text coming from external sources (CSV, data
 def svg_escape(text):
     return str(text).replace('&','&amp;').replace('<','&lt;').replace('>','&gt;').replace('"','&quot;')
 
-# ❌ Splicing external data directly ("Earn&Wealth" → XML parse failure, image won't render)
+# ❌ Splicing external data directly ("Research&Development" → XML parse failure, image won't render)
 svg += f'<text>{team_name}</text>'
 
 # ✅ Escape first

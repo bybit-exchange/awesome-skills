@@ -1,0 +1,96 @@
+<svg viewBox="13 0 717 318.5" width="717" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#a855f7"/>
+    </marker>
+  </defs>
+
+  <!-- Light canvas, so the diagram reads as a white card on a dark page. It matches the
+       viewBox exactly and is excluded from the content bounding box, so it never fights the
+       22px margins the viewBox leaves on all four sides. -->
+  <rect x="13" y="0" width="717" height="318.5" fill="#ffffff"/>
+
+  <!-- Title centred on the content centre x=371.5, which sits right of the two groups'
+       centre because the standalone purple box counts as content. -->
+  <text x="371.5" y="34" font-size="16" fill="#1e293b" text-anchor="middle">How an agent loads a skill</text>
+
+  <!-- The two groups are deliberately identical in style and size: this diagram is also the
+       gallery's demonstration that sibling groups must agree. Padding is 30px at the top so
+       the 11px title has room, 15px at the sides, 20px at the bottom.
+       The 110px channel between them (x=245 to x=355) is the width of the diagram's widest
+       connector label, `descriptions only`, plus clearance to each dashed wall. A label
+       resting on a dashed wall draws no linter finding, so this width is set by the render. -->
+  <rect x="35" y="60" width="210" height="214" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="6,4"/>
+  <text x="45" y="78" font-size="11" fill="#64748b">Agent session</text>
+  <rect x="355" y="60" width="210" height="214" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="6,4"/>
+  <text x="365" y="78" font-size="11" fill="#64748b">Disk</text>
+
+  <!-- Connectors. Every one starts at its source edge ± 5 and ends at its target edge ∓ 11,
+       because refX="2" pushes the painted tip 6px past the path's end. -->
+  <!-- Session start -> Skill index: same column, so a straight vertical L. -->
+  <path d="M140,131 L 140,143" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <!-- The two disk directories converge on the index. Rows are aligned across the channel, so
+       the upper directory needs one curve down and the lower one is level and straight. On the
+       curve cp2 is level with the end and to its right, which is what lands the arrowhead
+       pointing left; the two arrows arrive 14px apart on the same edge so neither hides the
+       other. -->
+  <path d="M365,108 C 325,108 280,158 241,158" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path d="M365,172 L 241,172" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <!-- The expensive path: one straight line the full width of the channel, then out of the
+       disk into the session's context. -->
+  <path d="M235,236 L 359,236" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <path d="M555,236 L 567,236" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+
+  <!-- Session rows. Baselines are box y + height/2 + 12 × 0.35, the optical centre.
+       `Skill index` is one line: what the index holds is said once, on the connector that
+       carries it across the channel. -->
+  <rect x="50" y="90" width="180" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="140" y="112" font-size="12" fill="#1e40af" text-anchor="middle">Session start</text>
+  <rect x="50" y="154" width="180" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="140" y="176" font-size="12" fill="#1e40af" text-anchor="middle">Skill index</text>
+  <rect x="50" y="218" width="180" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="140" y="240" font-size="12" fill="#1e40af" text-anchor="middle">Request matches</text>
+
+  <!-- Disk rows, aligned with the session rows rather than offset half a row. The offset used
+       to buy a straddle at the price of an empty band under this group's title; aligning the
+       rows keeps both groups' padding identical and costs the flow nothing. -->
+  <rect x="370" y="90" width="180" height="36" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="460" y="112" font-size="12" fill="#166534" text-anchor="middle">~/.claude/skills/</text>
+  <rect x="370" y="154" width="180" height="36" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="460" y="176" font-size="12" fill="#166534" text-anchor="middle">.agents/skills/</text>
+  <rect x="370" y="218" width="180" height="36" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="460" y="240" font-size="12" fill="#166534" text-anchor="middle">SKILL.md body</text>
+
+  <!-- The destination, outside both groups. Two lines rather than one: the same words in a
+       taller, narrower box give the right-hand third of the canvas some weight instead of a
+       white gap, and keep the row's size spread inside tolerance. The block's centre sits at
+       box y + height/2 + 12 × 0.35 and the lines are 18px apart. -->
+  <rect x="578" y="209" width="130" height="54" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+  <text x="643" y="231" font-size="12" fill="#6b21a8" text-anchor="middle">Body loaded</text>
+  <text x="643" y="249" font-size="12" fill="#6b21a8" text-anchor="middle">into context</text>
+
+  <!-- Every connector label sits in the 28px band between two rows, so its glyph box clears
+       the boxes' vertical bands and is judged only against its own connector: 10px minimum
+       from a straight line, 15px from a curve. The two channel labels are centred on the
+       channel so each one is nearer its own connector than to any other. -->
+  <text x="152" y="143" font-size="10" fill="#64748b">at startup</text>
+  <text x="300" y="196" font-size="10" fill="#64748b" text-anchor="middle">descriptions only</text>
+  <text x="300" y="258" font-size="10" fill="#64748b" text-anchor="middle">on match</text>
+
+  <!-- Colour key, clear of the groups and 20px below the nearest box. -->
+  <path d="M132,290 L 150,290" fill="none" stroke="#3b82f6" stroke-width="3"/>
+  <text x="162" y="294" font-size="10" fill="#64748b">agent session</text>
+  <path d="M258,290 L 276,290" fill="none" stroke="#22c55e" stroke-width="3"/>
+  <text x="288" y="294" font-size="10" fill="#64748b">disk, descriptions at startup</text>
+  <path d="M471,290 L 489,290" fill="none" stroke="#a855f7" stroke-width="3"/>
+  <text x="501" y="294" font-size="10" fill="#64748b">body loaded on match</text>
+</svg>

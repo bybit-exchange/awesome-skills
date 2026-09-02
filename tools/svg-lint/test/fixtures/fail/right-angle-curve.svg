@@ -1,0 +1,21 @@
+<!-- tools/svg-lint/test/fixtures/fail/right-angle-curve.svg -->
+<!-- First connector: the cp2 of the C curve is 12px off the endpoint y, so it is not tangent to the
+     arrow direction. No two of the curve's four points share a coordinate, on either axis, so a
+     value asserted against this connector names one of those four points and not another of them. Its
+     start sits 0.3px off the y its end sits on, which keeps the curve within the axis tolerance of
+     horizontal.
+     Second connector: its second segment runs 80px across and 50px up, so it is a straight line
+     along neither axis. -->
+<svg viewBox="0 0 320 160" width="320" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="320" height="160" fill="#ffffff"/>
+  <path d="M45,40.3 C80,44 110,52 160,40" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M40,110 L 120,110 L 200,60" fill="none" stroke="#64748b" stroke-width="1.5"/>
+</svg>

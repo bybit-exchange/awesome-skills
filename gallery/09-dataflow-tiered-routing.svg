@@ -1,0 +1,124 @@
+<svg viewBox="8 0 676 504" width="676" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#a855f7"/>
+    </marker>
+  </defs>
+
+  <!-- Light canvas, so the diagram reads as a white card on a dark page -->
+  <rect x="8" y="0" width="676" height="504" fill="#ffffff"/>
+
+  <!-- Column and row arithmetic, decided before any coordinate was written.
+       Widths come from the char table: 12px Latin 7.0px/char, 10px Latin 5.5px/char.
+       The widest second line is 30 chars x 5.5 = 165px, so 192px leaves 13.5px of padding
+       on each side of it. Every box on the centre column and every tier box is that width,
+       which also puts the three tiers inside the 60px same-row size limit at a spread of 0.
+       Tier row: three 192px boxes on a 220px pitch, so both gaps are 220 - 192 = 28px.
+       Row spans 30..662, so the content centre is (30 + 662) / 2 = 346 and every centred
+       box sits at x = 346 - 192/2 = 250.
+       Rows descend on a 28px gap throughout: 118 -> 146, 218 -> 246, 300 -> 328, 400 -> 428.
+       viewBox: content runs x 30..662 and y 22 (title glyph top) ..482 (gateway bottom),
+       so 22px on all four sides gives 8 0 676 504 — left 30-8, right 684-662, top 22-0,
+       bottom 504-482. -->
+
+  <!-- Title on the content centre 346, not the viewBox centre. y = 22 + 16 x 0.75 -->
+  <text x="346" y="34" font-size="16" fill="#1e293b" text-anchor="middle">Tiered model routing behind one gateway</text>
+
+  <!-- Connectors first, so the boxes and their labels paint over the line ends.
+       Vertical runs: start = source bottom + 5, end = target top - 11, leaving 12px of
+       visible line — twice the 6px an arrowhead needs not to degenerate into a dot.
+       Each connector carries the stroke colour of the box it leaves. -->
+  <path d="M346,123 L 346,135" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <path d="M346,223 L 346,235" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+  <path d="M346,305 L 346,317" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+
+  <!-- The two outer legs of the fan-out leave the sides of the rule box rather than its
+       bottom edge. A curve dropped from the bottom edge has to cross the 28px channel above
+       the middle tier, which puts it about 17px from that box — inside the 20px a detour
+       owes a box it is only passing. Leaving from the side keeps every point of the curve
+       to the outside of the middle tier's own x span instead.
+       Start x = 250 - 5 and 442 + 5, both at the rule box's mid height 246 + 54/2 = 273.
+       The last control point sits directly above the end point at (tier centre, 290), which
+       is what makes the arrowhead land pointing straight down into the tier box.
+       End y = 328 - 11, so the tip stops 5px short of the tier row.
+       Mirrored about x=346: the left leg spans 245 -> 126 and the right 447 -> 566, both a
+       119px reach, so the fan reads as symmetric. -->
+  <path d="M245,273 C 190,273 126,290 126,317" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+  <path d="M447,273 C 502,273 566,290 566,317" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+
+  <!-- The convergence: three collinear drops from 400 + 5 to 428 - 11, at the tier centres
+       126, 346 and 566. The gateway spans 30..662, so the outer two land 96px inside its
+       ends and the pitch between them stays the tier row's 220px. -->
+  <path d="M126,405 L 126,417" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path d="M346,405 L 346,417" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <path d="M566,405 L 566,417" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+
+  <!-- Two-line box: height is 12 x 3 + 18 = 54, the one-line height plus one 12px line
+       height. The block centre belongs at box centre + 12 x 0.35, so with the two baselines
+       18px apart they land at 64 + 22 = 86 and 86 + 18 = 104, whose midpoint 95 is within
+       half a pixel of 64 + 27 + 3.85.
+       Blue is the input triple: this is the request entering the router. -->
+  <rect x="250" y="64" width="192" height="54" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="346" y="86" font-size="12" fill="#1e40af" text-anchor="middle">Incoming request</text>
+  <text x="346" y="104" font-size="10" fill="#1e40af" text-anchor="middle">any model may be requested</text>
+
+  <!-- Three-line box: height is 12 x 3 + 2 x 18 = 72. The two 10px lines are one 10 x 1.5
+       line height apart (369 - 384 pattern below, 15px here: 187 -> 202), while the 12px
+       heading keeps the 18px gap set by the larger font. Baselines 169 / 187 / 202 put the
+       block midpoint at 185.5, against the 146 + 36 + 3.85 the box wants.
+       Orange is the processing triple: reading signals off the request is work, not a
+       decision. The four signals are split across two lines because all four on one line
+       measures 39 x 5.5 = 215px, wider than the 188px a 192px box can hold. -->
+  <rect x="250" y="146" width="192" height="72" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="346" y="169" font-size="12" fill="#b45309" text-anchor="middle">Feature extraction</text>
+  <text x="346" y="187" font-size="10" fill="#b45309" text-anchor="middle">token count · tools requested</text>
+  <text x="346" y="202" font-size="10" fill="#b45309" text-anchor="middle">context depth · task type</text>
+
+  <!-- Still the processing triple: matching is the second half of the same decision step,
+       and giving it its own colour would imply a third kind of stage. -->
+  <rect x="250" y="246" width="192" height="54" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="346" y="268" font-size="12" fill="#b45309" text-anchor="middle">Rule match</text>
+  <text x="346" y="286" font-size="10" fill="#b45309" text-anchor="middle">first matching rule wins</text>
+
+  <!-- One triple per tier, so the three destinations are told apart by colour alone:
+       output green for the cheap path, input blue for the default one, analysis purple for
+       the reasoning one. Baselines 351 / 369 / 384 are the 169 / 187 / 202 pattern shifted
+       by the 182px between the two row tops, so the midpoint 367.5 matches
+       328 + 36 + 3.85 the same way. -->
+  <rect x="30" y="328" width="192" height="72" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="126" y="351" font-size="12" fill="#166534" text-anchor="middle">Tier 1 · Light</text>
+  <text x="126" y="369" font-size="10" fill="#166534" text-anchor="middle">short follow-ups, translation</text>
+  <text x="126" y="384" font-size="10" fill="#166534" text-anchor="middle">a small fast model</text>
+
+  <rect x="250" y="328" width="192" height="72" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="346" y="351" font-size="12" fill="#1e40af" text-anchor="middle">Tier 2 · Standard</text>
+  <text x="346" y="369" font-size="10" fill="#1e40af" text-anchor="middle">anything no other rule matched</text>
+  <text x="346" y="384" font-size="10" fill="#1e40af" text-anchor="middle">a mid-tier model</text>
+
+  <rect x="470" y="328" width="192" height="72" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+  <text x="566" y="351" font-size="12" fill="#6b21a8" text-anchor="middle">Tier 3 · Advanced</text>
+  <text x="566" y="369" font-size="10" fill="#6b21a8" text-anchor="middle">complex reasoning, design work</text>
+  <text x="566" y="384" font-size="10" fill="#6b21a8" text-anchor="middle">a frontier model</text>
+
+  <!-- The base bar spans the whole tier row, 30..662, so the convergence reads as three
+       paths entering one component rather than three separate hand-offs. Two lines, so the
+       height is the same 54 as the other two-line boxes and the baselines repeat the
+       428 + 22 / + 18 arithmetic.
+       The warning triple: this is the one place a failed call is retried, and the tier the
+       router picked can still be replaced here. -->
+  <rect x="30" y="428" width="632" height="54" rx="6" fill="#fce7f3" stroke="#ec4899"/>
+  <text x="346" y="450" font-size="12" fill="#9d174d" text-anchor="middle">LLM gateway</text>
+  <text x="346" y="468" font-size="10" fill="#9d174d" text-anchor="middle">single endpoint, fallback chain per tier</text>
+</svg>

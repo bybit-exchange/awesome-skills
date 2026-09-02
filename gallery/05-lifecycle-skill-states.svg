@@ -1,0 +1,70 @@
+<svg viewBox="18 0 716 199.5" width="716" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#a855f7"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <!-- Light canvas, so the diagram reads as a white card on a dark page -->
+  <rect x="18" y="0" width="716" height="199.5" fill="#ffffff"/>
+
+  <!-- Title, centred on the row of states rather than on the viewBox -->
+  <text x="376" y="34" font-size="16" fill="#1e293b" text-anchor="middle">The life of a skill in this repo</text>
+
+  <!-- One row of states: five 112×36 boxes at a 140px pitch, so every gap is 28px.
+       Row top y=76, bottom y=112, mid height y=94. -->
+  <!-- Forward transitions: collinear at the row's mid height, each stroked in the colour
+       of the state it leaves. start = source right edge + 5, end = target left edge - 11 -->
+  <path d="M157,94 L 169,94" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <path d="M297,94 L 309,94" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+  <path d="M437,94 L 449,94" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <path d="M577,94 L 589,94" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- States are rounder than an ordinary component box (rx=18 against the usual 6), so the
+       row reads as a set of states rather than a set of parts.
+       Label baseline = box y + height/2 + 12 × 0.35 -->
+  <rect x="40" y="76" width="112" height="36" rx="18" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="96" y="98" font-size="12" fill="#1e40af" text-anchor="middle">Draft</text>
+  <rect x="180" y="76" width="112" height="36" rx="18" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="236" y="98" font-size="12" fill="#b45309" text-anchor="middle">Dogfooded</text>
+  <rect x="320" y="76" width="112" height="36" rx="18" fill="#f3e8ff" stroke="#a855f7"/>
+  <text x="376" y="98" font-size="12" fill="#6b21a8" text-anchor="middle">Linted</text>
+  <rect x="460" y="76" width="112" height="36" rx="18" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="516" y="98" font-size="12" fill="#166534" text-anchor="middle">Published</text>
+  <rect x="600" y="76" width="112" height="36" rx="18" fill="#fce7f3" stroke="#ec4899"/>
+  <text x="656" y="98" font-size="12" fill="#9d174d" text-anchor="middle">Deprecated</text>
+
+  <!-- Transition names sit 10px above the box tops. A 28px gap cannot hold a phrase this
+       long without crowding a box wall, and a name lifted clear of the row's vertical band
+       belongs to the arrow directly beneath it. -->
+  <text x="166" y="66" font-size="10" fill="#64748b" text-anchor="middle">used on a real task</text>
+  <text x="306" y="66" font-size="10" fill="#64748b" text-anchor="middle">0 errors, 0 warnings</text>
+  <text x="446" y="66" font-size="10" fill="#64748b" text-anchor="middle">merged</text>
+  <text x="586" y="66" font-size="10" fill="#64748b" text-anchor="middle">superseded</text>
+
+  <!-- A published skill going back for revision, painted last so no state box can hide it.
+       It leaves the bottom of Published, runs west at y=150 — 38px below the row, so it
+       keeps well outside the 20px a detour owes the boxes it passes — and re-enters the
+       bottom of Draft.
+       Two segments joined at (320,150): the first arrives travelling west out of (380,150)
+       and the second leaves west toward (260,150), so the tangent runs straight through the
+       join instead of turning a corner.
+       The last control point is (96,150), directly below the end point, which is what makes
+       the arrowhead land pointing up into the box above it. -->
+  <path d="M516,117 C 516,150 380,150 320,150 C 260,150 96,150 96,123" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-purple)"/>
+  <!-- Below the curve, 25px under its lowest point: a curve label wants 15px of clear space
+       and the glyph box reaches 7.5px above its own baseline. -->
+  <text x="304" y="175" font-size="10" fill="#64748b" text-anchor="middle">revision</text>
+</svg>

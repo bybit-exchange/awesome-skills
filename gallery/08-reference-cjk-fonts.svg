@@ -1,0 +1,80 @@
+<svg viewBox="8 0 462 475.5" width="462" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#22c55e"/>
+    </marker>
+    <!-- House rule: a marker's fill equals its connector's stroke. The broken path is drawn in
+         #ec4899, so it gets its own pink head instead of borrowing the red one. -->
+    <marker id="arrow-pink" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#ec4899"/>
+    </marker>
+  </defs>
+
+  <!-- Light canvas, so the figure reads as a white card on a dark page -->
+  <rect x="8" y="0" width="462" height="475.5" fill="#ffffff"/>
+
+  <!-- Box widths, 12px body text at 7.0px per Latin character and 12.0px per CJK character,
+       10px secondary text at 5.5px per Latin character:
+         SVG 声明了字体栈 / SVG 没声明字体栈   4 Latin x7 + 6 CJK x12          -> 100
+         Noto Sans CJK SC                     16 Latin x5.5                   ->  88  (widest label)
+         字体无 CJK 覆盖                       5 CJK x10 + 5 Latin x5.5        ->  77.5
+       Every box is 170 wide, so the widest label keeps 41px of clear space each side and the two
+       paths are the same shape for comparison. Three lines per box -> height 12 x 3 + 2 x 18 = 72;
+       the single-line source boxes are 12 x 3 = 36.
+       U+25A1 needs care: its East Asian Width is only ambiguous, yet the font paints it full
+       width, so the four squares are priced as CJK (4 x 12 = 48), not Latin. They still fit with
+       room to spare, because the font-name line under them is the widest label in that box. -->
+
+  <!-- Title x is the content centre (30..448 -> 239), not the viewBox centre. y = 22 + 16 x 0.75 -->
+  <text x="239" y="34" font-size="16" fill="#1e293b" text-anchor="middle">为什么字体栈不能省</text>
+
+  <!-- Connectors. Rightward: start = source right edge + 5, end = target left edge - 11.
+       The middle branch is the only straight one: the source box and the middle target sit 28px
+       apart, which leaves no room for the outer branches to leave the same edge and climb past
+       the middle target, so they leave the top and bottom edges instead (5px clear) and the outer
+       targets step 50px further right to give the curves somewhere to go. Each outer branch is a
+       single C with cp2 level with its endpoint and behind it, so the head lands pointing right. -->
+  <path d="M180,173 C 180,140 240,96 267,96" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path d="M205,196 L 217,196" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path d="M180,219 C 180,252 240,296 267,296" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path d="M205,396 L 217,396" fill="none" stroke="#ec4899" stroke-width="1.5" marker-end="url(#arrow-pink)"/>
+
+  <!-- Declared stack: the platform picks the first family it has, and all three have CJK coverage.
+       Baselines in a three-line box: box y + 22 / + 40 / + 58, an 18px line height for the two
+       12px lines, with the 10px font name last. -->
+  <rect x="30" y="178" width="170" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="115" y="200" font-size="12" fill="#1e40af" text-anchor="middle">SVG 声明了字体栈</text>
+
+  <rect x="278" y="60" width="170" height="72" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="363" y="82" font-size="12" fill="#166534" text-anchor="middle">macOS</text>
+  <text x="363" y="100" font-size="12" fill="#166534" text-anchor="middle">中文标签</text>
+  <text x="363" y="118" font-size="10" fill="#64748b" text-anchor="middle">PingFang SC</text>
+
+  <rect x="228" y="160" width="170" height="72" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="313" y="182" font-size="12" fill="#166534" text-anchor="middle">Windows</text>
+  <text x="313" y="200" font-size="12" fill="#166534" text-anchor="middle">中文标签</text>
+  <text x="313" y="218" font-size="10" fill="#64748b" text-anchor="middle">Microsoft YaHei</text>
+
+  <rect x="278" y="260" width="170" height="72" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="363" y="282" font-size="12" fill="#166534" text-anchor="middle">Linux</text>
+  <text x="363" y="300" font-size="12" fill="#166534" text-anchor="middle">中文标签</text>
+  <text x="363" y="318" font-size="10" fill="#64748b" text-anchor="middle">Noto Sans CJK SC</text>
+
+  <!-- Omitted stack, same left edge and same box sizes as the path above, so the eye compares the
+       two. The gap between the two source boxes is wide on purpose: the bottom green target sits
+       between them, and the two paths have to read as two paths rather than one stack. -->
+  <rect x="30" y="378" width="170" height="36" rx="6" fill="#fce7f3" stroke="#ec4899"/>
+  <text x="115" y="400" font-size="12" fill="#9d174d" text-anchor="middle">SVG 没声明字体栈</text>
+
+  <rect x="228" y="360" width="170" height="72" rx="6" fill="#fce7f3" stroke="#ec4899"/>
+  <text x="313" y="382" font-size="12" fill="#9d174d" text-anchor="middle">Linux</text>
+  <!-- Four U+25A1 WHITE SQUARE: the figure shows the missing glyphs rather than naming them. -->
+  <text x="313" y="400" font-size="12" fill="#9d174d" text-anchor="middle">□□□□</text>
+  <text x="313" y="418" font-size="10" fill="#64748b" text-anchor="middle">字体无 CJK 覆盖</text>
+
+  <!-- Bottom annotation, centred on the content centre, 19px below the lowest box edge. -->
+  <text x="239" y="451" font-size="10" fill="#64748b" text-anchor="middle">Noto Sans CJK SC 必须保留：服务端 Linux 渲染就靠它兜底</text>
+</svg>

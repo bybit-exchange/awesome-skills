@@ -1,0 +1,83 @@
+<svg viewBox="0 0 736 547" width="736" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#a855f7"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-pink" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#ec4899"/>
+    </marker>
+    <marker id="arrow-muted" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- Layer 0: light canvas, so the diagram reads as a white card on a dark page -->
+  <rect x="0" y="0" width="736" height="547" fill="#ffffff"/>
+
+  <!-- Title centred on the content centre (40..696) = 368 -->
+  <text x="368" y="34" font-size="16" fill="#1e293b" text-anchor="middle">Where the lint gate sits</text>
+
+  <!-- Layer 1: the alt group, wrapping the two repair messages -->
+  <!-- The frame overhangs the participant row by 18px on each side, so its 11px title
+       can sit at the top-left corner without landing on the Agent lifeline at x=140 -->
+  <rect x="22" y="356" width="692" height="102" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="6,4"/>
+  <text x="32" y="370" font-size="11" fill="#64748b">alt [errors &gt; 0]</text>
+
+  <!-- Layer 2: lifelines, painted first. Collinear vertical straight lines, no curves.
+       Participant centres x = 140 / 368 / 596; head boxes end at y=94, so lifelines start at 99 -->
+  <path d="M140,99 L 140,525" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+  <path d="M368,99 L 368,525" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+  <path d="M596,99 L 596,525" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Layer 2: messages. Horizontal collinear L lines; start = source lifeline ±5, end = target lifeline ∓11.
+       Message pitch 46px, so each label clears the arrow above it by more than it clears its own. -->
+  <!-- 1. Agent -> Filesystem -->
+  <path d="M145,130 L 585,130" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <!-- 2. Agent -> svg-lint -->
+  <path d="M145,176 L 357,176" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <!-- 3. svg-lint -> Filesystem: the gate reads the real file, not an intermediate IR -->
+  <path d="M373,222 L 585,222" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-muted)"/>
+  <!-- 4. svg-lint self-call. Both endpoints sit on the lifeline 50px apart, so the axis is vertical;
+       cp1 bulges right, cp2.x = end.x makes the arrow land pointing down. -->
+  <path d="M368,250 C 408,255 368,290 368,300" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <!-- 5. svg-lint -> Agent -->
+  <path d="M363,330 L 151,330" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <!-- 6. Agent -> Filesystem (inside alt) -->
+  <path d="M145,396 L 585,396" fill="none" stroke="#ec4899" stroke-width="1.5" marker-end="url(#arrow-pink)"/>
+  <!-- 7. Agent -> svg-lint (inside alt) -->
+  <path d="M145,442 L 357,442" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <!-- 8. Agent self-call, starting 5px below the alt frame it follows -->
+  <path d="M140,463 C 180,468 140,503 140,513" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Layer 3: participant head boxes; 200x36, baseline = 58 + 18 + 12 × 0.35 -->
+  <rect x="40" y="58" width="200" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="140" y="80" font-size="12" fill="#1e40af" text-anchor="middle">Agent</text>
+  <rect x="268" y="58" width="200" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="368" y="80" font-size="12" fill="#1e40af" text-anchor="middle">svg-lint</text>
+  <rect x="496" y="58" width="200" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="596" y="80" font-size="12" fill="#1e40af" text-anchor="middle">Filesystem</text>
+
+  <!-- Layer 3: message labels. Each sits in a clear channel between two adjacent lifelines
+       (never centred on its own span, which would land on the middle lifeline).
+       Baseline = arrow y - 13, the offset that clears a straight connector for 10px text. -->
+  <text x="482" y="117" font-size="10" fill="#64748b" text-anchor="middle">write candidate.svg</text>
+  <text x="254" y="163" font-size="10" fill="#64748b" text-anchor="middle">lint candidate.svg --json</text>
+  <text x="482" y="209" font-size="10" fill="#64748b" text-anchor="middle">read</text>
+  <!-- Note on the read message, deliberately below its arrow and in muted italic so it does
+       not read as a message label of its own; it also fills the otherwise dead right channel -->
+  <text x="482" y="243" font-size="10" fill="#94a3b8" font-style="italic" text-anchor="middle">the finished file, not an IR</text>
+  <text x="420" y="278" font-size="10" fill="#64748b">run 12 checks</text>
+  <text x="254" y="317" font-size="10" fill="#64748b" text-anchor="middle">receipt: errors + repair hints</text>
+  <text x="482" y="383" font-size="10" fill="#64748b" text-anchor="middle">patch one finding</text>
+  <text x="254" y="429" font-size="10" fill="#64748b" text-anchor="middle">re-lint</text>
+  <text x="192" y="491" font-size="10" fill="#64748b">freeze and hand over</text>
+</svg>

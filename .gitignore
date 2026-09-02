@@ -1,0 +1,6 @@
+# Design record and session scratch. Neither is part of the skill and nothing reads
+# either at runtime, so both stay out of the tree — the more so because SKILL.md sits at
+# the repository root, which makes `npx skills add` copy everything beside it into the
+# reader's skills directory.
+.superpowers/
+docs/superpowers/

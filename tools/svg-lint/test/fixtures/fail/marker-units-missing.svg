@@ -1,0 +1,14 @@
+<!-- markerUnits absent and refX written as 0: at stroke-width=2 the arrowhead both doubles and shifts -->
+<svg viewBox="0 0 272 120" width="272" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }</style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="0" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <path d="M117,80 L 129,80" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="22" y="62" width="90" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="67" y="84" font-size="12" fill="#1e40af" text-anchor="middle">Ingest</text>
+  <rect x="140" y="62" width="110" height="36" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="195" y="84" font-size="12" fill="#166534" text-anchor="middle">Store</text>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "name": "svg-diagram",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test 'tools/svg-lint/test/**/*.test.mjs'",
+    "lint:svg": "node tools/svg-lint/bin/svg-lint.mjs",
+    "lint:svg:all": "git ls-files -z '*.svg' ':!:tools/svg-lint/test/fixtures/*' | xargs -0 node tools/svg-lint/bin/svg-lint.mjs"
+  }
+}

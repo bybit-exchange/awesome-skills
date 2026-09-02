@@ -1,0 +1,76 @@
+<svg viewBox="18 0 1118 487.5" width="1118" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <!-- Light canvas, so the figure reads as a white card on a page of any colour. -->
+  <rect x="18" y="0" width="1118" height="487.5" fill="#ffffff"/>
+
+  <!-- Box widths, counted per script: latin 7.0px per character at 12px, 5.5px at 10px;
+       a CJK character (fullwidth brackets included) is one full font size wide.
+         command      47 latin x 7.0  = 329.0 -> 360 box, 15.5px clear each side
+         longest note  4 CJK x 10 + 35 latin x 5.5 = 232.5 -> 305 box, 36px clear each side
+       The three boxes on the middle line (command, CLI, .pi) have to stay within 60px of
+       each other in size, so the CLI box and the surfaces follow the command box up to 305
+       rather than hugging their own labels: 360 - 305 = 55. All five surfaces share that
+       width and a 54px height so the fan is symmetric about its middle branch. -->
+
+  <!-- Title x is the centre of the drawn content (40..1114), not of the viewBox.
+       y = 22px top margin + 16 x 0.75 ascent. -->
+  <text x="577" y="34" font-size="16" fill="#1e293b" text-anchor="middle">一行命令，装到所有 agent</text>
+
+  <!-- Connectors: start = source edge + 5, end = target edge - 11, because refX="2" puts the
+       arrow tip 6px past the end of the line. -->
+  <path d="M405,253 L 417,253" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <path d="M738,253 L 750,253" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- The CLI box and the middle surface sit 28px apart, so there is no room to the right of
+       the CLI box for the outer branches to climb past that surface. They leave the top and
+       bottom edges instead, 5px clear of the box, at two x positions so the four arcs are
+       graduated and never touch. Each is a single C whose second control point is level with
+       its end point and to its left, which is what makes every arrowhead point right. -->
+  <path d="M703,221 C 703,186 723,171 774,171" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path d="M683,221 C 683,153 713,89 798,89" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path d="M703,285 C 703,320 723,335 774,335" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path d="M683,285 C 683,353 713,417 798,417" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- The command. One line, so height = 12 x 3; baseline = box y + height/2 + 12 x 0.35. -->
+  <rect x="40" y="235" width="360" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="220" y="257.2" font-size="12" fill="#1e40af" text-anchor="middle">npx skills add bybit-exchange/svg-diagram -g</text>
+
+  <!-- Two lines, so height = 12 x 3 + 18 line height. The pair is centred as a block: the
+       midpoint of the two baselines sits at box centre + 0.35 x the average of the two font
+       sizes, which is why the baselines are 247.85 and 265.85 rather than round numbers. -->
+  <rect x="428" y="226" width="305" height="54" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+  <text x="580.5" y="247.85" font-size="12" fill="#6b21a8" text-anchor="middle">skills CLI</text>
+  <text x="580.5" y="265.85" font-size="10" fill="#64748b" text-anchor="middle">77 agents</text>
+
+  <!-- The five install surfaces, 28px apart vertically. Their left edges step 809 / 785 / 761
+       / 785 / 809: the middle one is nearest the CLI box, and each outer one stands further
+       right, which both keeps the vertical gaps inside 25-30px and leaves the outer arcs room
+       to climb without passing within 20px of the surface they are not connected to. -->
+  <rect x="809" y="62" width="305" height="54" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="961.5" y="83.85" font-size="12" fill="#166534" text-anchor="middle">.agents/skills/</text>
+  <text x="961.5" y="101.85" font-size="10" fill="#64748b" text-anchor="middle">通用（Codex / Cursor / Copilot / opencode）</text>
+  <rect x="785" y="144" width="305" height="54" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="937.5" y="165.85" font-size="12" fill="#166534" text-anchor="middle">.claude/skills/</text>
+  <text x="937.5" y="183.85" font-size="10" fill="#64748b" text-anchor="middle">符号链接</text>
+  <rect x="761" y="226" width="305" height="54" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="913.5" y="257.2" font-size="12" fill="#166534" text-anchor="middle">.pi/skills/</text>
+  <rect x="785" y="308" width="305" height="54" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="937.5" y="339.2" font-size="12" fill="#166534" text-anchor="middle">.openhands/skills/</text>
+  <rect x="809" y="390" width="305" height="54" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="961.5" y="421.2" font-size="12" fill="#166534" text-anchor="middle">.windsurf/skills/</text>
+
+  <!-- Caption on the content centre, 19px below the lowest box, which keeps its glyph box far
+       clear of the lowest arc. -->
+  <text x="577" y="463" font-size="10" fill="#64748b" text-anchor="middle">实测 2026-08-28：CLI 识别 77 个 agent，Claude Code 走符号链接</text>
+</svg>

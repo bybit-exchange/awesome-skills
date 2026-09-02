@@ -1,0 +1,105 @@
+<svg viewBox="0 0 510 537" width="510" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#a855f7"/>
+    </marker>
+    <marker id="arrow-pink" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#ec4899"/>
+    </marker>
+  </defs>
+
+  <!-- Layer 0: light canvas, so the diagram reads as a white card on a dark page -->
+  <rect x="0" y="0" width="510" height="537" fill="#ffffff"/>
+
+  <!-- Title. y = 22 + 16 x 0.75 = 34, so its glyph box starts at the 22px top margin.
+       x is the centre of the body bounds (22..488), which is 255 rather than the 262 the
+       boxes are centred on: the return curve reaches x=22 and is part of those bounds. -->
+  <text x="255" y="34" font-size="16" fill="#1e293b" text-anchor="middle">A/B benchmark with a model as judge</text>
+
+  <!-- Layer 1: the dashed grouping box, painted first so nothing it holds is covered.
+       Height 327 = 25 (title band) + 54 + 28 + 54 + 28 + 54 + 28 + 36 + 20 (bottom padding):
+       the band the group name occupies is part of the height, not extra space above it.
+       Side padding 16; the bottom gets 20 so the loop-back label has somewhere to sit. -->
+  <rect x="36" y="122" width="452" height="327" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="6,4"/>
+  <!-- Group name inset from the corner: x = 36 + 10, y = 122 + 14, which leaves its glyph
+       box 5.75px clear of the top wall and 10px clear of the left one. -->
+  <text x="46" y="136" font-size="11" fill="#64748b">For each test case</text>
+
+  <!-- Layer 2: ordinary connectors. start = source edge + 5, end = target edge - 11, so the
+       arrowhead's 6px tip stops 5px short of the target. -->
+  <!-- Into the group, not into either call: the case enters the loop, and the two calls are
+       a set. 92 + 5 = 97; 122 - 11 = 111, leaving 14px of visible line. -->
+  <path d="M262,97 L 262,111" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <!-- The two calls run on the same input and both land in the same record box. Each arrow
+       drops from its own box centre (150 and 374), 201 + 5 = 206 to 229 - 11 = 218. -->
+  <path d="M150,206 L 150,218" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+  <path d="M374,206 L 374,218" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <path d="M262,288 L 262,300" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path d="M262,370 L 262,382" fill="none" stroke="#ec4899" stroke-width="1.5" marker-end="url(#arrow-pink)"/>
+  <!-- The loop exit, so it leaves the group's own bottom wall rather than any one step:
+       449 + 5 = 454 to 479 - 11 = 468. Neutral grey because the group, not a step, is its
+       source. -->
+  <path d="M262,454 L 262,468" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Layer 3: boxes and labels. One-line height is 12 x 3 = 36 and the baseline is box
+       centre + 12 x 0.35; two-line height is 36 + 18 = 54, with the pair of baselines
+       straddling that same centre 9px either side. -->
+  <rect x="162" y="56" width="200" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="262" y="78" font-size="12" fill="#1e40af" text-anchor="middle">Load test cases</text>
+
+  <!-- The A and the B: same 196x54 so they read as peers, but different triples because one
+       is the fixed reference and the other is the thing being measured. -->
+  <rect x="52" y="147" width="196" height="54" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="150" y="169" font-size="12" fill="#b45309" text-anchor="middle">Call the baseline</text>
+  <text x="150" y="187" font-size="12" fill="#b45309" text-anchor="middle">a fixed single model</text>
+  <rect x="276" y="147" width="196" height="54" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+  <text x="374" y="169" font-size="12" fill="#6b21a8" text-anchor="middle">Call the router under test</text>
+  <text x="374" y="187" font-size="12" fill="#6b21a8" text-anchor="middle">classify, then route</text>
+
+  <rect x="132" y="229" width="260" height="54" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="262" y="251" font-size="12" fill="#166534" text-anchor="middle">Record the result</text>
+  <text x="262" y="269" font-size="12" fill="#166534" text-anchor="middle">tokens, cost, latency, route taken</text>
+
+  <!-- The judge is the step whose bias has to be controlled, which is what the blind
+       presentation buys, so it carries the sensitive triple rather than another analysis one. -->
+  <rect x="132" y="311" width="260" height="54" rx="6" fill="#fce7f3" stroke="#ec4899"/>
+  <text x="262" y="333" font-size="12" fill="#9d174d" text-anchor="middle">Blind pairwise judge</text>
+  <text x="262" y="351" font-size="12" fill="#9d174d" text-anchor="middle">both answers, random order</text>
+
+  <rect x="182" y="393" width="160" height="36" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="262" y="415" font-size="12" fill="#b45309" text-anchor="middle">Next case</text>
+
+  <rect x="162" y="479" width="200" height="36" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="262" y="501" font-size="12" fill="#166534" text-anchor="middle">Generate the report</text>
+
+  <!-- Layer 4: the loop back, painted last so no box and no dashed wall can hide it where it
+       crosses out of the group at y=411.
+       It leaves Next case at 182 - 5 = 177 and runs west at that box's mid height, then up a
+       channel at x=22 — 14px outside the group wall, which keeps it 30px clear of the call
+       box inside and 46px clear of the judge box it passes.
+       Two C segments joined at (22,380): the first arrives travelling north out of (22,411)
+       and the second leaves north toward (22,200), so the tangent runs straight through the
+       join instead of turning a corner.
+       cp2 is (22,174), level with the end point, so the arrowhead lands pointing east; the tip
+       stops at 31, 5px short of the group's left wall. It terminates on the wall rather than on
+       either call box because the next case re-enters the pair, not one of them. -->
+  <path d="M177,411 C 96,411 22,411 22,380 C 22,200 22,174 25,174" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-orange)"/>
+  <!-- Below the curve: its lowest run sits at y=411 near this label and the glyph box reaches
+       7.5px above its own baseline, which leaves the 15px a curve label owes the line. -->
+  <text x="106" y="437" font-size="10" fill="#64748b" text-anchor="middle">repeat</text>
+</svg>

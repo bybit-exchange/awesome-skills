@@ -1,0 +1,6 @@
+<!-- tools/svg-lint/test/fixtures/fail/no-background.svg -->
+<!-- No background rectangle and a dark-colored title: invisible under the GitHub dark theme -->
+<svg viewBox="0 0 272 60" width="272" xmlns="http://www.w3.org/2000/svg">
+  <style>text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }</style>
+  <text x="136" y="32" font-size="16" fill="#1e293b" text-anchor="middle">Dark title</text>
+</svg>

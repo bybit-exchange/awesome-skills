@@ -1,0 +1,75 @@
+<svg viewBox="-10 2 520 410" width="520" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#a855f7"/>
+    </marker>
+  </defs>
+  <!-- 22px on the left, right and bottom, each measured off the root box. The top margin is set
+       by the title's glyph top instead, the title being the one thing that sits outside it. -->
+  <rect x="-10" y="2" width="520" height="410" fill="#ffffff"/>
+
+  <text x="250" y="36" font-size="16" fill="#1e293b" text-anchor="middle">What's in this repository</text>
+
+  <!-- The repository root, holding every tracked entry at the top level. Its 334px is three
+       measured parts rather than one padding figure: a 36px band from the border down to the
+       first row, which is what the name needs; 280px of content, from y=92 to the bottom row's
+       lower edge at 372; and 18px below. The sides also use 18px, so only the top differs, and
+       it differs because it carries text. -->
+  <rect x="12" y="56" width="476" height="334" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="6,4"/>
+  <text x="22" y="71" font-size="11" fill="#64748b">bybit-exchange/svg-diagram</text>
+
+  <!-- One semantic triple for everything at the root, whatever kind of entry it is, so the
+       figure reads by position rather than by colour. A border is drawn only where the contents
+       are drawn: gallery/ and assets/ are directories as much as tools/ is, but their members
+       are not in this figure, so they stay plain boxes. Rows are 25px apart, the minimum. -->
+  <rect x="30" y="92" width="192" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="126" y="114" font-size="12" fill="#1e40af" text-anchor="middle">SKILL.md</text>
+  <rect x="30" y="153" width="192" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="126" y="175" font-size="12" fill="#1e40af" text-anchor="middle">README.md</text>
+  <rect x="30" y="214" width="192" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="126" y="236" font-size="12" fill="#1e40af" text-anchor="middle">gallery/ (10 diagrams)</text>
+  <rect x="30" y="275" width="192" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="126" y="297" font-size="12" fill="#1e40af" text-anchor="middle">assets/</text>
+
+  <!-- The one directory whose contents are drawn, so the one that gets a border. It repeats the
+       root's dash rhythm and corner radius rather than inventing a second grouping style: 15px
+       padding at the sides and bottom, and 25px at the top so the first member clears the name
+       instead of leaving a gap under it. -->
+  <rect x="278" y="92" width="192" height="204" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="6,4"/>
+  <text x="288" y="106" font-size="11" fill="#64748b">tools/svg-lint/</text>
+
+  <rect x="293" y="117" width="162" height="36" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+  <text x="374" y="139" font-size="12" fill="#6b21a8" text-anchor="middle">bin/svg-lint.mjs</text>
+  <rect x="293" y="181" width="162" height="36" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+  <text x="374" y="203" font-size="12" fill="#6b21a8" text-anchor="middle">lib/</text>
+  <rect x="293" y="245" width="162" height="36" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+  <text x="374" y="267" font-size="12" fill="#6b21a8" text-anchor="middle">test/</text>
+
+  <!-- The last three root entries run across the full inner width rather than lengthening the
+       left column, which would have pushed the figure 122px taller for three short labels. They
+       clear the left column by 25px, the same minimum the column uses between its own rows. The
+       gap to the tools group is 40px rather than 25-30, because the left column ends 15px lower
+       than that group and so is what sets this row's position. 129 wide each, with gaps of 26
+       and 27: 3x129 + 26 + 27 = 440, the span from x=30 to x=470. Holding the boxes at 129
+       leaves 53px of gap, which does not halve into whole pixels, so the two gaps differ by
+       one. Equal gaps were available at other widths, but not at this one. -->
+  <rect x="30" y="336" width="129" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="94.5" y="358" font-size="12" fill="#1e40af" text-anchor="middle">package.json</text>
+  <rect x="185" y="336" width="129" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="249.5" y="358" font-size="12" fill="#1e40af" text-anchor="middle">LICENSE</text>
+  <rect x="341" y="336" width="129" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="405.5" y="358" font-size="12" fill="#1e40af" text-anchor="middle">.gitignore</text>
+
+  <!-- The linter as a whole gates the gallery, not any one of its files, so the line leaves the
+       group's own wall. Both ends sit on y=232, the gallery box's vertical centre, which is what
+       lets this one be straight. It travels leftwards, so the two clearances move in opposite
+       directions along x: 278-5 at the wall it leaves, and 222+11 at the box it points to, which
+       puts the 8px arrowhead's tip at 227 and so 5px clear. The 56px channel between the two
+       borders is what the label needs, and its baseline sits 14px above the line to leave 11.5px:
+       clearance is measured to the glyph box's bottom, a quarter of the font size below it. -->
+  <path d="M273,232 L 233,232" fill="none" stroke="#a855f7" marker-end="url(#arrow-purple)"/>
+  <text x="250" y="218" font-size="10" fill="#64748b" text-anchor="middle">gates</text>
+</svg>

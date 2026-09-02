@@ -1,0 +1,11 @@
+<!-- tools/svg-lint/test/fixtures/fail/line-cuts-box.svg -->
+<!-- the line neither starts nor ends at the middle box, yet runs straight through its centre -->
+<svg viewBox="0 0 280 80" width="280" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <path d="M27,40 L 203,40" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="22" y="22" width="60" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <rect x="110" y="22" width="60" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <rect x="198" y="22" width="60" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+</svg>

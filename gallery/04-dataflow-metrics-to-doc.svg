@@ -1,0 +1,79 @@
+<svg viewBox="8 0 784 201.5" width="784" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', system-ui, sans-serif; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#a855f7"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#22c55e"/>
+    </marker>
+    <!-- House rule: a marker's fill equals its connector's stroke. The warning
+         connector is #ec4899, so it gets its own pink marker rather than arrow-red. -->
+    <marker id="arrow-pink" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 L2,4 z" fill="#ec4899"/>
+    </marker>
+  </defs>
+
+  <!-- Layer 0: light canvas, so the diagram reads as a white card on a dark page -->
+  <rect x="8" y="0" width="784" height="201.5" fill="#ffffff"/>
+
+  <!-- Width arithmetic, 12px body text: Latin 7.0px/char, CJK 12.0px/char.
+       Mixed labels accumulate the two scripts separately; box width = label + 2x12 padding.
+         1  数据接口 (MCP)   4 CJK x12 = 48 + 6 Latin(" (MCP)") x7 = 42  -> 90  -> box 120
+         2  口径校验         4 CJK x12 = 48                              -> 48  -> box  80
+         3  聚合计算         4 CJK x12 = 48                              -> 48  -> box  80
+         4  svg_escape()     12 Latin x7 = 84 (pure Latin in a CJK figure)-> 84  -> box 120
+         5  图表 SVG         2 CJK x12 = 24 + 4 Latin(" SVG") x7 = 28    -> 52  -> box  80
+         6  Markdown 文档    8 Latin x7 = 56 + 1 space x7 + 2 CJK x12=24 -> 87  -> box 120
+       Row: 120+80+80+120+80+120 = 600 across five 28px gaps -> content x=30..770, centre 400.
+       Largest minus smallest box = 40px, inside the 60px same-row limit. -->
+
+  <!-- Title: x is the content centre (400), not the viewBox centre. y = 22 + 16 x 0.75 -->
+  <text x="400" y="34" font-size="16" fill="#1e293b" text-anchor="middle">从数据接口到文档配图</text>
+
+  <!-- Layer 2: connectors. start = source right edge + 5, end = target left edge - 11.
+       Main row centre line y = 122 + 36/2 = 140. Each connector carries its source stage's colour. -->
+  <path d="M155,140 L 167,140" fill="none" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <path d="M263,140 L 275,140" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+  <path d="M371,140 L 383,140" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+  <path d="M519,140 L 531,140" fill="none" stroke="#a855f7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <path d="M627,140 L 639,140" fill="none" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <!-- Warning connector: annotation bottom 94 + 5 -> box 4 top 122 - 11 -->
+  <path d="M454,99 L 454,111" fill="none" stroke="#ec4899" stroke-width="1.5" marker-end="url(#arrow-pink)"/>
+
+  <!-- Layer 3: the annotation that motivates step 4. 10px text -> height 10 x 3 = 30.
+       Label width: 8 CJK x10 = 80, plus 一 arrow glyph 10, plus 8 Latin/space x5.5 = 44 -> 134.
+       134 + 2x10 padding = 154 minimum; 170 gives visible clearance on both sides.
+       The literal ampersand is written &amp; in the source - a bare & would make this
+       whole file fail to parse, which is exactly what the label is warning about.
+       Sits 26px below the title glyph bottom, so the two do not read as one block. -->
+  <rect x="369" y="64" width="170" height="30" rx="6" fill="#fce7f3" stroke="#ec4899"/>
+  <text x="454" y="82" font-size="10" fill="#9d174d" text-anchor="middle">团队名含 &amp; → XML 解析失败</text>
+
+  <!-- Layer 3: main flow boxes. Baseline = box y + 36/2 + 12 x 0.35 = 122 + 18 + 4.2 -->
+  <rect x="30" y="122" width="120" height="36" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="90" y="144" font-size="12" fill="#1e40af" text-anchor="middle">数据接口 (MCP)</text>
+  <rect x="178" y="122" width="80" height="36" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="218" y="144" font-size="12" fill="#b45309" text-anchor="middle">口径校验</text>
+  <rect x="286" y="122" width="80" height="36" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="326" y="144" font-size="12" fill="#b45309" text-anchor="middle">聚合计算</text>
+  <rect x="394" y="122" width="120" height="36" rx="6" fill="#f3e8ff" stroke="#a855f7"/>
+  <text x="454" y="144" font-size="12" fill="#6b21a8" text-anchor="middle">svg_escape()</text>
+  <rect x="542" y="122" width="80" height="36" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="582" y="144" font-size="12" fill="#166534" text-anchor="middle">图表 SVG</text>
+  <rect x="650" y="122" width="120" height="36" rx="6" fill="#d1fae5" stroke="#22c55e"/>
+  <text x="710" y="144" font-size="12" fill="#166534" text-anchor="middle">Markdown 文档</text>
+
+  <!-- Bottom caption, 10px secondary text, centred on the content centre.
+       28 CJK x10 = 280 -> spans 400 +/- 140 = 260..540, inside the content band.
+       Baseline = row bottom 158 + 19, matching the worked example's caption gap. -->
+  <text x="400" y="177" font-size="10" fill="#64748b" text-anchor="middle">口径与来源随数据一起流动：换了接口或时间范围，图必须重画</text>
+</svg>
