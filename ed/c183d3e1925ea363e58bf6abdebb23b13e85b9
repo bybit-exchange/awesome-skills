@@ -1,0 +1,53 @@
+README.md
+  a87fe6c728d2decc 28,32,37,44,56,58,60,63,69,116,125,128
+skills/svg-diagram/gallery/03-sequence-lint-gate.svg
+  a87fe6c728d2decc 1-83
+skills/svg-diagram/gallery/05-lifecycle-skill-states.svg
+  a87fe6c728d2decc 1-70
+skills/svg-diagram/gallery/06-architecture-repo-layout.svg
+  a87fe6c728d2decc 1-63
+skills/svg-diagram/gallery/01-architecture-skill-loading.svg
+  a87fe6c728d2decc 1-96
+skills/svg-diagram/gallery/09-dataflow-tiered-routing.svg
+  a87fe6c728d2decc 1-124
+skills/svg-diagram/gallery/02-workflow-svg-authoring.svg
+  a87fe6c728d2decc 1-70
+skills/svg-diagram/gallery/08-reference-cjk-fonts.svg
+  a87fe6c728d2decc 1-80
+skills/svg-diagram/gallery/07-workflow-install-surfaces.svg
+  a87fe6c728d2decc 1-76
+skills/svg-diagram/README.md
+  a87fe6c728d2decc 1-173,175-212
+skills/svg-diagram/SKILL.md
+  a87fe6c728d2decc 1-586
+tools/svg-lint/lib/checks/palette-conformance.mjs
+  a87fe6c728d2decc 39
+skills/svg-diagram/gallery/04-dataflow-metrics-to-doc.svg
+  a87fe6c728d2decc 1-79
+package.json
+  a87fe6c728d2decc 8
+skills/svg-diagram/gallery/10-workflow-ab-benchmark.svg
+  a87fe6c728d2decc 1-105
+tools/svg-lint/README.md
+  a87fe6c728d2decc 21,29-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "edc183d3e1925ea363e58bf6abdebb23b13e85b9",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 2318,
+      "total_deletions": 20,
+      "accepted_lines": 2301,
+      "overriden_lines": 16
+    }
+  }
+}
