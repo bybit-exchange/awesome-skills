@@ -185,7 +185,7 @@ Diagrams committed here must pass clean, and the test suite has to stay green:
 
 ```bash
 npm run lint:svg:all   # the 11 SVGs this repo ships
-npm test               # 933 tests
+npm test               # 984 tests
 ```
 
 Everything under `tools/svg-lint/test/fixtures/` is excluded from the lint run — for the 14 under `fail/`, failing is their job, and the 2 under `pass/` are asserted by the test suite instead.

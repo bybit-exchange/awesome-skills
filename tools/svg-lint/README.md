@@ -144,7 +144,7 @@ the checklist has no item for it.
 | `overlap` | Seven findings, three errors and four warnings. Errors: a label whose box overlaps a solid content box it does not belong to, a label a connector runs through, and a connector that crosses into a solid content box with neither endpoint inside it. "Crosses into" is measured against the box inset by a flat 1px — not by the rect's own stroke width — so a connector resting exactly on a wall is not entering — it falls to the detour arm below and is reported there at 0px, the same code it gets half a pixel out, which is what keeps one rule judging a grazing line at every offset. Warnings: a label under 10px from a straight connector or under 15px from a curved one, a connector passing under 20px from a solid content box that neither endpoint is within 20px of, and a label whose glyph box lies across the outline of a dashed grouping box. That last one judges the four edges as bands one stroke wide, never the interior: text belongs inside a container, so a group title or a member label inset from the wall is clean, and so is anything inside a nested inner group. A label inside a box is measured for clearance only where a subpath crosses that box's wall; a label whose centre is inside a panel is not reported against the panel. | "No overlapping elements (text, boxes, lines)" — of the pairings that item names, text-over-box, text-over-line and line-over-box are the ones checked here, and box-over-box is checked nowhere (see Known limits); the grouping-box outline is judged under the same item, since a label lying on the dashed line overlaps something drawn; "≥15px between a curve label and the nearest point on the curve"; "Detour paths stay outside obstacles" |
 | `light-bg-fallback` | A label with none of four shields behind it, whose fill — **written as a 3- or 6-digit hex** — contrasts under 4.5:1 with the GitHub dark canvas `#0d1117`. A warning. The shields, any one of which is enough: the label's own box is painted; some painted solid content box covers the whole glyph box; some painted dashed grouping box covers it; or a painted `<circle>`, `<ellipse>`, `<polygon>` or `<polyline>` covers it. Covering means all four edges of the glyph box are inside, so a label running past the paint is not shielded. A painted `<line>` is not a shield — a line's fill paints nothing. Two exits come before all of that: a painted background rect stands in for every glyph in the file, and a file with no `<text>` is left alone. A fill the module cannot read as hex gets no finding either: `fill="black"` and `fill="rgb(0,0,0)"` produce nothing where `fill="#000000"` reports 1.11:1. Paint of any colour counts, so a dark full-canvas rect exempts the file — a false negative the check records rather than guesses at. | No checklist item. It is the machine-checkable half of a project decision: dark-theme readability comes from a light background rect, not from dual theming. |
 | `palette-conformance` | All four findings are warnings. A `fill` or `stroke` outside the house palette on a `<rect>`, `<text>`, `<path>` or `<marker>` — those four element kinds are the whole scan, so `<line>`, `<circle>`, `<ellipse>`, `<polygon>` and `<polyline>` are never colour-checked. Colours are read from presentation attributes and inheritance only; a `fill` declared in a `<style>` rule is invisible here, because the model parses `font-family` and nothing else out of CSS. On a solid content box, a semantic fill paired with the wrong stroke or label colour. And a dashed grouping box whose `stroke-dasharray`, `rx` or `fill` differs from the commonest value among the diagram's grouping boxes, the earliest box winning a tie — so with exactly two boxes that disagree it is always the second one that is reported. Of the five properties the checklist item lists, those three are the ones compared: padding and title font size are not. | The "Colors" section (base text colours, the five semantic triples) — the set compared against is that section plus the six arrowhead colours, the dashed grouping box's own fill and stroke, `none` and `#ffffff`; "Dashed grouping boxes styled consistently (dasharray, corner radius, fill, padding, title font size)" |
-| `connector-geometry` | Only a `<path>` whose effective `fill` resolves to `none` — that is how the tool decides a path is a connector. The same 90° elbow is silent with no `fill` attribute (an undeclared fill resolves to black) and an error with `fill="none"`. On such a path, four errors: a subpath shorter than 6px, a straight `L` running diagonally, a turn of 60° or more between two segments that meet, and — only when the path carries `marker-end` and its last modelled segment is a `C` or `Q` whose start-to-end chord is longer than half a pixel — a second control point that would aim the arrowhead back along the connector, or, **only where that chord is axis-aligned**, one that would aim it off the axis. Both perpendicular arms are gated on the chord not being diagonal, so a diagonal chord is judged for direction agreement alone; that is the tool's largest deliberate blind spot and it has its own Known limits entry. | "Connectors use C/Q curves, no right angles"; the "visible line segment ≥6px" clause of "Symmetric arrow clearance at both ends (5px), visible line segment ≥6px" — the clearance clause of that item is `arrow-marker`'s |
+| `connector-geometry` | Only a `<path>` whose effective `fill` resolves to `none` — that is how the tool decides a path is a connector. The same 90° elbow is silent with no `fill` attribute (an undeclared fill resolves to black) and an error with `fill="none"`. On such a path, five errors: a subpath shorter than 6px, a straight `L` running diagonally, a turn of 60° or more between two segments that meet, and — only when the path carries `marker-end` and its last modelled segment is a `C` or `Q` whose start-to-end chord is longer than half a pixel — a second control point that would aim the arrowhead back along the connector, or, **only where that chord is axis-aligned**, one that would aim it off the axis. Both perpendicular arms are gated on the chord not being diagonal, so a diagonal chord is judged for direction agreement alone; that is the tool's largest deliberate blind spot and it has its own Known limits entry. The fifth error, `self-return-tangent-parallel`, is the self-message arm. Like the two above it, it needs the path to carry `marker-end` and its last modelled segment to be a `C` or `Q`; unlike them it does not need a chord longer than half a pixel, because it takes its axis from elsewhere. It claims such a curve when the point its **subpath began at** — not the last curve's start, which on a two-curve self-message is the apex of the bulge — and its end both lie within 12px of one straight dashed line, level with the stretch that line covers. That line is a sequence diagram's lifeline, recognised as a `<path>` or a `<line>` with no `marker-start` or `marker-end` of its own (lifelines carry no arrowhead) whose bounding box has no width or no height, and whose own `stroke-dasharray` renders dashed — `none`, blank, `0`, `0,0` and any list with a negative length all draw solid and are not lifelines; a dasharray inherited from a `<g>`, or one written with units (`4px`), is not seen either. The 12px band is not slack: the house rule holds a message's start 5px clear of the lifeline and ends its line at lifeline + 11, which is where the 6px the arrowhead adds puts the painted tip 5px clear, so a correctly drawn self-call never touches the line it returns to, and a rule wanting the endpoints *on* the line would guard only self-calls drawn wrong. The other condition is that nothing the arrowhead could have arrived at lies within 20px of the end point *while being nearer that end point than the point the subpath began at* — something the curve is no closer to at its tip than at the place it set out from is something it ran alongside, not something it arrived at, which is what an activation bar straddling its own lifeline looks like: equidistant from both ends, or 0px from both where the message is drawn inside it. The two distances are compared rather than each held against the radius, and equality falls on the not-an-arrival side. A flat 20px on both ends was wrong in the reporting direction: at the house minimum block spacing of 25px a connector leaves its source 5px clear and its line ends 11px short of its destination, which puts that destination exactly 20px from the start as well, so no box qualified and a correct downward arrow drawn beside a dashed line was reported. What the comparison costs in the other direction is a silence with its own Known limits entry: an activation bar opened at the message start is nearer the tip than the start, so it reads as a destination and this arm stands down on a genuine defect. The things it can arrive at are the solid content boxes plus any `<circle>`, `<ellipse>`, `<polygon>` or `<polyline>` with an area; a `<line>` has none, and admitting it would make every lifeline the target of the message being judged. A rect with no width or no height is filtered the same way and for the same reason — it paints what that line paints. One further exit, and it withdraws more than this arm: a single **solid content rect** in the file whose geometry the model cannot read (`width="180px"`) stops **both** arrowhead judgments for every connector in that file, this one and `curve-tangent-not-aligned` — a dashed grouping rect withdraws nothing, and a rect missing `width` outright is read as 0 and dropped for having no area rather than triggering this. Withdrawing only the lifeline was worse than withdrawing nothing — it handed a correct self-return to the chord arm, which asks cp2 to match a chord that runs along the lifeline and so quoted `408 → 368`, the defect itself, as the repair. Silence is affordable there because the file still carries `document-model/non-numeric-attribute` and cannot pass as clean. An unreadable **shape** is treated the other way round — not an arrival target, and no silence — because `NUMERIC_ATTRS` covers a rect's width and height but not a circle's `r`, so `r="19px"` draws no note anywhere and a file carrying it lints 0/0: silence there would hide a real defect behind nothing at all. That trade buys an invisible false positive in exchange, since an arrow that legitimately stops short of such a circle is now read as a self-message with nothing to explain it; both halves have Known limits entries. Widening `NUMERIC_ATTRS` to cover shape attributes would remove the asymmetry and is left for its own change, since every check reads that list. For such a curve the axis comes from the lifeline rather than from the chord, and the closing tangent has to cross it: a tangent running along the lifeline is the error, because an arrowhead pointing down a lifeline names no participant. The receipt quotes how far the tangent crosses the lifeline against the half-pixel tolerance (`0` against `> 0.5`) rather than cp2's coordinate, so that a cp2 a third of a pixel off the endpoint — a defect whose coordinate already differs from the endpoint's — still gets an expected it fails. That replaces only the perpendicular arm above, which reaches the opposite verdict on this shape — the chord of a self-return lies along the lifeline, so asking cp2 to match it asks for the defect, and a correct self-return closing across the lifeline was being reported. The past-the-tip arm still applies, measured along the lifeline. The discriminator is the document and not the `d`, deliberately: an obstacle detour has the same chord, the same off-axis bulge and the same tangent along the axis, and is correct — the box at the end point is the only thing that tells the two apart. A dashed grouping box is not such a box, since a message drawn inside an `alt` frame is inside it rather than arriving at it. | "Connectors use C/Q curves, no right angles"; the "visible line segment ≥6px" clause of "Symmetric arrow clearance at both ends (5px), visible line segment ≥6px" — the clearance clause of that item is `arrow-marker`'s |
 
 ### Three exemptions shared by the rows above
 
@@ -210,10 +210,10 @@ code at 0.
 
 ## Known limits
 
-Every entry here is silence a reader could otherwise take for a pass. They are not all the same kind,
-and each one says which it is: some are scope decisions with the reasoning kept beside them, some are
-limits inherited from how the model reads a file, and the last is a gap that nothing enforces and
-nobody chose.
+Most entries here are silence a reader could otherwise take for a pass; some run the other way and
+report a drawing that is correct. They are not all the same kind, and each one says which it is: some
+are scope decisions with the reasoning kept beside them, some are limits inherited from how the model
+reads a file, and the last is a gap that nothing enforces and nobody chose.
 
 - **`parsePath` does not model `A`, `S` or `T`.** A path using one is reported as a
   `document-model/unsupported-path-command` warning naming the command; the command is collapsed to
@@ -286,6 +286,79 @@ nobody chose.
   `M600,313 Q 650,313 650,400 Q 650,640 635,685` ends on a chord 15px off vertical with a cp2 15px off
   the endpoint x, so tightening the rule would report a diagram the guide presents as correct, which is
   worse than the current silence.
+- **The defect the self-message rule exists for goes unreported beside an activation bar that opens
+  where the message starts.** A scope decision. `self-return-tangent-parallel` needs the curve to have
+  arrived at nothing, and something counts as arrived at when it lies within 20px of the tip *and*
+  nearer the tip than the point the curve set out from. That comparison is what stops a bar the
+  message is drawn inside from counting, and what keeps a correct connector between two boxes at the
+  25px minimum spacing from being reported — but a bar opened at the message start, or a nested bar
+  opened where the message lands, is not equidistant from the two ends. It is nearer the tip, so it
+  reads as a destination and the arm stands down. Measured, on a dashed lifeline at x=368 with the
+  shape gallery/03 shipped with, `d="M368,250 C 408,255 368,290 368,300"`: against
+  `<rect x="362" y="240" width="12" height="80"/>`, a bar straddling both endpoints, the defect is
+  reported; against the same bar at `y="255"`, or a nested `<rect x="362" y="300" width="12"
+  height="60"/>`, it is not. The arrowhead points straight down the lifeline in all three.
+
+  The file is not silent overall, which is the one thing that keeps this from being the worst entry
+  here: a bar sits on its own lifeline, so `overlap/line-cuts-box` reports the lifeline running through
+  it and `arrow-marker/arrow-tip-clearance` reports the tip, and neither of those names the arrowhead
+  angle. A sequence diagram with activation bars does not lint clean today for reasons of its own; what
+  is missing is the finding that would tell the author the head points the wrong way.
+
+  **The working pattern is to draw a self-call the way gallery/03 does** — start 5px clear of the
+  lifeline, end the line at lifeline + 11, cp2 level with the endpoint — because beside a bar nothing
+  will remind you. Narrowing the silence means telling a 12px activation bar from a 200px destination
+  box, and the only feature that separates them is width, which the guide gives no number for; a
+  threshold invented here would start reporting correct diagrams whose boxes happen to be narrow.
+- **An arrow that legitimately stops short of a shape whose size carries a unit is reported as a
+  self-message, and nothing in the output says why.** A scope decision, and the one that reports with
+  no explanation attached. `NUMERIC_ATTRS` in `lib/document.mjs` covers a rect's `width` and `height`
+  but not a circle's `r`, so `r="19px"` is read as NaN and draws no `document-model` note of its own.
+  The shape is then not in the arrival set — a connector can never be said to have arrived at it — so a
+  correct arrow that stops the house 11px short of such a circle beside a lifeline is read as an
+  arrowhead pointing down that lifeline. Reproducible: replace `r="19"` with `r="19px"` on
+  `<circle cx="368" cy="330" r="19"/>` in a file whose connector is `M368,250 C 408,255 368,290
+  368,300`; the finding appears, and no `document-model` note appears beside it. The opposite stance was
+  worse: treating such a shape as an arrival silenced a real defect beside it, in a file that lints 0
+  errors and 0 warnings, so nothing anywhere pointed at the cause.
+
+  **The working pattern is to write shape sizes as plain numbers** — `r="19"` — which is what every
+  diagram in the gallery does and what the guide's own snippets show. The real repair is to widen
+  `NUMERIC_ATTRS` to cover `r`, `cx`, `cy`, `rx`, `ry` and `points`, which would give this file a note
+  of its own the way an unreadable rect gets one; that touches every check that reads the list and is
+  left for its own change.
+- **A single solid box whose size carries a unit switches off both arrowhead judgments for every
+  connector in the file.** A scope decision, and the widest withdrawal the tool makes. `width="180px"`
+  reads as NaN, so no box in that file can be placed, no arrival can be ruled in or out, and both
+  `self-return-tangent-parallel` and `curve-tangent-not-aligned` decline for every connector — not only
+  the one near the box. Withdrawing less was tried and was worse: dropping only the lifeline handed a
+  correct self-return to the chord arm, which asks cp2 to match a chord that runs along the lifeline,
+  and quoted `408 → 368` as the repair — the defect this check exists to catch, printed as an
+  instruction. What makes the silence affordable is that the file still carries
+  `document-model/non-numeric-attribute`, so it cannot pass as clean while the unit is there.
+  Reproducible: add `<rect x="268" y="320" width="180px" height="36"/>` to any file and every arrowhead
+  angle in it stops being judged.
+
+  **The working pattern is to fix the flagged attribute first**, then re-run: the arrowhead judgments
+  come back with it. A dashed grouping rect with a unit does not trigger this, and neither does a rect
+  missing `width` altogether — that is read as 0 and dropped for having no area.
+- **A curve whose tip stops on a dashed grouping box's wall is reported as a self-message when it also
+  runs along a lifeline.** A scope decision, with its reasoning kept beside it at
+  `lib/checks/connector-geometry.mjs:188`. The things an arrowhead may arrive at are the solid content
+  boxes and the area shapes, which is the set every other geometry check measures against; a dashed
+  grouping box is deliberately not among them, because a message drawn inside an `alt` frame measures 0
+  against the frame it is inside, so admitting the frame would leave every self-message drawn inside one
+  unjudged — the shape this rule exists for. The cost is that a detour whose tip stops at the frame's
+  wall has nothing recorded as arrived at, and if both its endpoints also lie within 12px of a lifeline
+  the finding fires on a curve whose cp2 sits exactly where the cp2 table puts it. Reproducible:
+  lifeline `<path d="M368,176 L 368,330" stroke-dasharray="4,4"/>`, frame
+  `<rect x="200" y="300" width="380" height="80" rx="8" fill="none" stroke-dasharray="6,4"/>`, and the
+  detour `d="M368,181 C 340,215 320,250 325,270 C 330,282 368,272 368,289"` with a `marker-end`, its
+  tip stopping 11px above the wall at y=300. One error, nothing else.
+
+  **The working pattern is to land the arrow on a box inside the frame rather than on the frame's
+  outline**, which is what every arrow in the gallery's sequence diagram does. An arrowhead that stops
+  on a container's wall names no participant, so the finding is arguable here rather than plainly wrong.
 - **A character whose East Asian Width is *ambiguous* is priced as Latin.** A scope decision, and the
   one whose cost is hardest to see, because the error runs in the direction that hides findings. The
   width table's CJK test starts at U+2E80, so everything below it — box-drawing characters, geometric
