@@ -1,0 +1,31 @@
+svg-diagram/gallery/07-workflow-install-surfaces.svg
+  a87fe6c728d2decc 47
+package.json
+  a87fe6c728d2decc 2
+svg-diagram/gallery/06-architecture-repo-layout.svg
+  a87fe6c728d2decc 20
+README.md
+  a87fe6c728d2decc 1,14,23,32,35,37,44
+svg-diagram/README.md
+  a87fe6c728d2decc 159
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "dffeb368c25179609a8009552ea3bb1173e63139",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 218,
+      "total_deletions": 18,
+      "accepted_lines": 341,
+      "overriden_lines": 0
+    }
+  }
+}
