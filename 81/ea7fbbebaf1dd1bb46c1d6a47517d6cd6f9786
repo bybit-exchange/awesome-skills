@@ -1,0 +1,23 @@
+gallery/10-workflow-ab-benchmark.svg
+  95e954be0a558658 100-107
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "81ea7fbbebaf1dd1bb46c1d6a47517d6cd6f9786",
+  "prompts": {
+    "95e954be0a558658": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1986147c-7c6d-44a8-91f3-5532ac3e8d0f",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 2826,
+      "total_deletions": 474,
+      "accepted_lines": 361,
+      "overriden_lines": 0
+    }
+  }
+}
