@@ -97,7 +97,14 @@
        join instead of turning a corner.
        cp2 is (22,174), level with the end point, so the arrowhead lands pointing east; the tip
        stops at 31, 5px short of the group's left wall. It terminates on the wall rather than on
-       either call box because the next case re-enters the pair, not one of them. -->
+       either call box because the next case re-enters the pair, not one of them.
+       That east-pointing arm is only 3px (cp2 x=22 to end x=25) and cannot be widened: the vertical
+       run at x=22 is already the 22px left viewBox margin, and 11 of the 14px between it and the wall
+       at x=36 is owed to arrowhead clearance. It is the thinnest tangent in the repo, so if either
+       endpoint is ever nudged, keep cp2.x < end.x or the arrowhead flips to point west.
+       Terminating on a group wall is the shape the "curve whose tip stops on a dashed grouping box's
+       wall" entry under Known limits in tools/svg-lint/README.md documents: were this arm also
+       collinear with a dashed line, connector-geometry would read it as a self-message. -->
   <path d="M177,411 C 96,411 22,411 22,380 C 22,200 22,174 25,174" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-orange)"/>
   <!-- Below the curve: its lowest run sits at y=411 near this label and the glyph box reaches
        7.5px above its own baseline, which leaves the 15px a curve label owes the line. -->
