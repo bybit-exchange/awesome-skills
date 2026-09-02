@@ -1,0 +1,27 @@
+tools/svg-lint/lib/parse-svg.mjs
+  a87fe6c728d2decc 80-90,97-100,155,255,259
+tools/svg-lint/test/checks/xml-escaping.test.mjs
+  a87fe6c728d2decc 56-77
+tools/svg-lint/test/parse-svg.test.mjs
+  a87fe6c728d2decc 180-253
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "e86162ab66974fbeb116902f6082d4ace13d32d4",
+  "prompts": {
+    "a87fe6c728d2decc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cb334afc-4729-47e6-9437-cee6d008983c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "lucasmaan",
+      "messages": [],
+      "total_additions": 114,
+      "total_deletions": 4,
+      "accepted_lines": 326,
+      "overriden_lines": 0
+    }
+  }
+}
